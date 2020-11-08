@@ -8,7 +8,7 @@ Website to showcase my astonishing writing, design, and coding skills. Currently
 - **Journalism** (*Roman Road LDN*, *New Scientist*, NCTJ, *The Quietus*, *Smashing Magazine*)
 - **Copywriting** (Praxis, My Green Butler, MVF, Trivia Daily, business websites)
 - **Design** (Album covers, *Audioxide*, *The Whale-Lines*)
-- **Web development** (*Audioxide*)
+- **Web development** (Languages, *Audioxide*)
 - **Community** (Raleigh expedition in Nepal, NCS)
 - **Contact/hCard**
 
