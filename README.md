@@ -1,6 +1,6 @@
 # Portfolio website
 
-Website to showcase my astonishing writing, design, and coding skills.
+Website to showcase my astonishing writing, design, and coding skills. Currently built using [Eleventy](https://11ty.dev) and hosted on [Netflify](https://netlify.com).
 
 ## Sections
 
