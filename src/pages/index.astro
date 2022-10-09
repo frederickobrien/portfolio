@@ -1,0 +1,50 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import ContactLinks from "../components/ContactLinks.astro";
+
+const bio = `
+	Software engineer at The Guardian, soft skills and professional development editor at
+	Smashing Magazine, grinch at Audioxide. Bylines here and he
+`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1>Frederick O’Brien</h1>
+      <div class="subheading">Master of no trades</div>
+      <img src="/self-portrait.jpg" alt="" />
+      <p>
+        Software engineer at <a
+          href="https://www.theguardian.com/info/series/engineering-blog/"
+          ><i>The Guardian</i>
+        </a>, soft skills and professional development editor at <a
+          href="https://www.smashingmagazine.com/author/frederick-o-brien/"
+          ><i>Smashing Magazine</i>
+        </a>, grinch at <a href="https://audioxide.com/"><i>Audioxide</i></a>.
+        Bylines here and there.
+      </p>
+      <ContactLinks />
+    </main>
+    <style>
+      h1 {
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+      }
+      .subheading {
+        font-family: "Oswald", sans-serif;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 300;
+      }
+    </style>
+  </body>
+</html>

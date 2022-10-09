@@ -1,0 +1,73 @@
+---
+import personalDetails from "../../data/personalInfo.json";
+
+const mailToLink = `mailto:${personalDetails.details.emailAddress}`;
+---
+
+<section class="contact">
+  <ul class="contact-icons-list">
+    <li>
+      <a href={personalDetails.accounts.gitHub.profileLink}
+        ><img
+          class="contact-icon"
+          src="/icons/github-icon.png"
+          alt="GitHub"
+          title="GitHub"
+        />
+      </a>
+    </li>
+    <li>
+      <a href={mailToLink}
+        ><img
+          class="contact-icon"
+          src="/icons/email-icon.png"
+          alt="Email"
+          title="Email"
+        />
+      </a>
+    </li>
+    <li>
+      <a href={personalDetails.accounts.twitter.profileLink}
+        ><img
+          class="contact-icon"
+          src="/icons/twitter-icon.png"
+          alt="Twitter"
+          title="Twitter"
+        />
+      </a>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .contact {
+    margin: auto;
+    padding: 40px 0px 60px 0px;
+    width: 50%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-icons-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-icons-list li {
+    display: inline-block;
+  }
+
+  .contact-icon {
+    width: 35px;
+    padding: 8px;
+  }
+
+  .contact-icon:hover {
+    opacity: 0.6;
+  }
+</style>
