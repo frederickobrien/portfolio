@@ -1,0 +1,16 @@
+{
+    "details": {
+        "name": "Frederick O'Brien",
+        "emailAddress": "frederik.obrien@gmail.com"
+    },
+    "accounts": {
+        "twitter": {
+            "handle": "yagayagafred",
+            "profileLink": "https://twitter.com/yagayagafred"
+        },
+        "gitHub": {
+            "handle": "frederickobrien",
+            "profileLink": "https://github.com/frederickobrien"
+        }
+    }
+}
