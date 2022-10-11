@@ -1,20 +1,23 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
 
 export interface Props {
   content: {
     title: string;
+    link: string;
     description: string;
-    pubDate?: string;
+    dateStarted?: string;
     updatedDate?: string;
     heroImage?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, link, description, heroImage },
 } = Astro.props;
+
+const fullLink = `https://${link}`;
 ---
 
 <html lang="en">
@@ -33,23 +36,33 @@ const {
         width: 50%;
         margin: auto;
       }
+      .home-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.3rem;
+      }
+      img {
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0)
+        );
+      }
     </style>
   </head>
 
   <body>
     <Header />
     <main>
+      <div class="home-link">
+        ← <a href="/">Home</a>
+      </div>
+
       <article>
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
+        <a href={fullLink}>{link}</a>
         <hr />
         <slot />
       </article>

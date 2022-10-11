@@ -1,13 +1,23 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import bylines from "../../data/bylines.json";
+import HomepageSection from "../components/HomepageSection.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import WeblogCard from "../components/WeblogCard.astro";
 
 const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.dateStarted).valueOf() -
     new Date(a.frontmatter.dateStarted).valueOf()
+);
+
+const weblogEntries = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
 );
 ---
 
@@ -19,61 +29,44 @@ const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
   <body>
     <Header />
     <main>
-      <section>
-        <h2>Projects</h2>
+      <HomepageSection title="Projects">
         {
           projects.map((project) => (
-            <div>
-              <h3>{project.frontmatter.title}</h3>
-              <div>{project.frontmatter.description}</div>
-              <img src={project.frontmatter.heroImage} alt="" />
-            </div>
+            <ProjectCard
+              url={project.url}
+              title={project.frontmatter.title}
+              description={project.frontmatter.description}
+              heroImage={project.frontmatter.heroImage}
+              heroImageAlt={project.frontmatter.heroImageAlt}
+            />
           ))
         }
-      </section>
-      <section>
-        <h2>Writings</h2>
+      </HomepageSection>
+      <HomepageSection title="Articles">
         {
           bylines.map((article) => (
-            <div>
-              <a href={article.url}>
-                <h3>{article.title}</h3>
-              </a>
-              <div>
-                <i>{article.publication}</i>, {article.publicationDate}
-              </div>
-            </div>
+            <ArticleCard
+              url={article.url}
+              title={article.title}
+              publication={article.publication}
+              publicationDate={article.publicationDate}
+            />
           ))
         }
-      </section>
-      <section>
-        <h2>Web Log</h2>
-      </section>
+      </HomepageSection>
+      <HomepageSection title="Web Log">
+        {
+          weblogEntries.map((weblog) => (
+            <WeblogCard
+              url={weblog.url}
+              title={weblog.frontmatter.title}
+              standfirst={weblog.frontmatter.standfirst}
+              date={weblog.frontmatter.date}
+              featuredImage={weblog.frontmatter.featuredImage}
+            />
+          ))
+        }
+      </HomepageSection>
     </main>
-    <style>
-      section {
-        font-family: Oswald;
-        font-weight: 300;
-        width: 25%;
-        padding: 10px;
-        display: inline-block;
-        overflow: auto;
-        vertical-align: top;
-        height: 100%;
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-      h2 {
-        font-size: 2rem;
-        text-align: center;
-      }
-      h3 {
-        font-size: 1.5rem;
-      }
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      section::-webkit-scrollbar {
-        display: none;
-      }
-    </style>
   </body>
 </html>

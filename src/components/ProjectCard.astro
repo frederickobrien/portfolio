@@ -1,0 +1,39 @@
+---
+export interface Props {
+  url: string;
+  title: string;
+  description: string;
+  heroImage: string;
+  heroImageAlt: string;
+}
+
+const { url, title, description, heroImage, heroImageAlt } = Astro.props;
+---
+
+<div class="project-card">
+  <a href={url}>
+    <img src={heroImage} alt={heroImageAlt} />
+    <div class="project-details">
+      <h3>{title}</h3>
+      <div class="description">{description}</div>
+    </div>
+  </a>
+</div>
+
+<style>
+  h3 {
+    font-size: 1.5rem;
+  }
+  .project-card {
+    padding-bottom: 20px;
+    /* box-shadow: 0px 0px 10px 5px #dedede; */
+    margin: 0 0 40px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: solid black 5px;
+    background-color: black;
+  }
+  .project-details {
+    padding: 10px 20px;
+  }
+</style>

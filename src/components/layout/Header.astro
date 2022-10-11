@@ -1,19 +1,17 @@
 ---
-import ContactLinks from "./ContactLinks.astro";
+import ContactLinks from "../ContactLinks.astro";
 ---
 
 <header>
   <div class="header-content">
     <h2>Frederick O'Brien</h2>
     <div class="subheading">Master of no trades</div>
-    <img src="/self-portrait.jpg" alt="Self portrait of Frederick O'Brien" />
     <nav>
       <ul>
-        <li>About</li>
-        <li>Contact</li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
-    <ContactLinks />
   </div>
 </header>
 <style>
@@ -22,19 +20,28 @@ import ContactLinks from "./ContactLinks.astro";
     top: 0;
     left: 0;
     height: 100vh;
-    width: 20%;
+    width: 25%;
+    display: flex;
+    align-items: center;
   }
   h2 {
     margin: 0;
     font-size: 2.5rem;
   }
+  img {
+    padding: 30px 0;
+  }
+  nav {
+    padding: 20px 0;
+  }
   li {
-    text-align: right;
+    text-align: left;
     font-family: Oswald;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    list-style: none;
   }
   .header-content {
-    padding: 20px;
+    padding: 30px;
   }
   .subheading {
     font-family: "Oswald", sans-serif;

@@ -1,0 +1,28 @@
+---
+export interface Props {
+  url: string;
+  title: string;
+  publication: string;
+  publicationDate: string;
+}
+
+const { url, title, publication, publicationDate } = Astro.props;
+---
+
+<div class="article-card">
+  <a href={url}>
+    <h3>{title}</h3>
+  </a>
+  <div>
+    <i>{publication}</i>, {publicationDate}
+  </div>
+</div>
+
+<style>
+  h3 {
+    font-size: 1.5rem;
+  }
+  .article-card {
+    padding-bottom: 20px;
+  }
+</style>
