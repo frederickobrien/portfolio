@@ -5,8 +5,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
   (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
@@ -40,8 +40,8 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
           {
             weblogs.map((weblog) => (
               <li>
-                <time datetime={weblog.frontmatter.date}>
-                  {new Date(weblog.frontmatter.date).toLocaleDateString(
+                <time datetime={weblog.frontmatter.pubDate}>
+                  {new Date(weblog.frontmatter.pubDate).toLocaleDateString(
                     "en-us",
                     {
                       year: "numeric",
