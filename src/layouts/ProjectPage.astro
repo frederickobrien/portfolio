@@ -1,0 +1,78 @@
+---
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    link: string;
+    description: string;
+    dateStarted?: string;
+    updatedDate?: string;
+    heroImage?: string;
+  };
+}
+
+const {
+  content: { title, link, description, heroImage },
+} = Astro.props;
+
+const fullLink = `https://${link}`;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      .title {
+        font-size: 2em;
+        margin: 0.25em 0 0;
+      }
+      hr {
+        border-top: 1px solid #ddd;
+        margin: 1rem 0;
+      }
+      article {
+        width: 90%;
+        margin: auto;
+      }
+      .home-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.3rem;
+      }
+      img {
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+      }
+
+      /* DESKTOP */
+
+      @media (min-width: 1025px) {
+        article {
+          width: 50%;
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        <h1 class="title">{title}</h1>
+        <a href={fullLink}>{link}</a>
+        <hr />
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>

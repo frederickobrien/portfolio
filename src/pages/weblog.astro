@@ -1,0 +1,61 @@
+---
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            weblogs.map((weblog) => (
+              <li>
+                <time datetime={weblog.frontmatter.date}>
+                  {new Date(weblog.frontmatter.date).toLocaleDateString(
+                    "en-us",
+                    {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    }
+                  )}
+                </time>
+                <a href={weblog.url}>{weblog.frontmatter.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

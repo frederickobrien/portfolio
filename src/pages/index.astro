@@ -1,13 +1,24 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import ContactLinks from "../components/ContactLinks.astro";
+import bylines from "../../data/bylines.json";
+import HomepageSection from "../components/HomepageSection.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import WeblogCard from "../components/WeblogCard.astro";
 
-const bio = `
-	Software engineer at The Guardian, soft skills and professional development editor at
-	Smashing Magazine, grinch at Audioxide. Bylines here and he
-`;
+const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.dateStarted).valueOf() -
+    new Date(a.frontmatter.dateStarted).valueOf()
+);
+
+const weblogEntries = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
 ---
 
 <!DOCTYPE html>
@@ -16,35 +27,47 @@ const bio = `
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
+    <Header />
     <main>
-      <h1>Frederick O’Brien</h1>
-      <div class="subheading">Master of no trades</div>
-      <img src="/self-portrait.jpg" alt="" />
-      <p>
-        Software engineer at <a
-          href="https://www.theguardian.com/info/series/engineering-blog/"
-          ><i>The Guardian</i>
-        </a>, soft skills and professional development editor at <a
-          href="https://www.smashingmagazine.com/author/frederick-o-brien/"
-          ><i>Smashing Magazine</i>
-        </a>, grinch at <a href="https://audioxide.com/"><i>Audioxide</i></a>.
-        Bylines here and there.
-      </p>
-      <ContactLinks />
+      <HomepageSection title="Projects">
+        {
+          projects.map((project) => (
+            <ProjectCard
+              url={project.url}
+              title={project.frontmatter.title}
+              description={project.frontmatter.description}
+              heroImage={project.frontmatter.heroImage}
+              heroImageAlt={project.frontmatter.heroImageAlt}
+            />
+          ))
+        }
+      </HomepageSection>
+      <HomepageSection title="Articles">
+        {
+          bylines.map((article) => (
+            <ArticleCard
+              url={article.url}
+              title={article.title}
+              publication={article.publication}
+              publicationDate={article.publicationDate}
+            />
+          ))
+        }
+      </HomepageSection>
+      <HomepageSection title="Web Log">
+        <p>Pending...</p>
+        <!-- {
+          weblogEntries.map((weblog) => (
+            <WeblogCard
+              url={weblog.url}
+              title={weblog.frontmatter.title}
+              standfirst={weblog.frontmatter.standfirst}
+              date={weblog.frontmatter.date}
+              featuredImage={weblog.frontmatter.featuredImage}
+            />
+          ))
+        } -->
+      </HomepageSection>
     </main>
-    <style>
-      h1 {
-        font-size: 36px;
-        font-weight: 400;
-        text-align: center;
-      }
-      .subheading {
-        font-family: "Oswald", sans-serif;
-        text-align: center;
-        font-size: 25px;
-        font-weight: 300;
-      }
-    </style>
   </body>
 </html>

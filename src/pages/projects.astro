@@ -1,0 +1,60 @@
+---
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.dateStarted).valueOf() -
+    new Date(a.frontmatter.dateStarted).valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <div>
+          <h2>Projects</h2>
+
+          <ul>
+            {
+              projects.map((project) => (
+                <li>
+                  <a href={project.url}>{project.frontmatter.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

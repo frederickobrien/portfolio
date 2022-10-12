@@ -98,17 +98,20 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   font-family: "Oswald", sans-serif;
 }
 
 main {
-  margin: auto;
-  padding: 20px;
 }
 
 img {
   width: 100%;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 /* TABLET */
@@ -123,6 +126,10 @@ img {
 
 @media (min-width: 1025px) {
   main {
-    width: 30%;
+    width: 75%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
   }
 }

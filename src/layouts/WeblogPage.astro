@@ -1,0 +1,49 @@
+---
+import BaseHead from "../components/layout/BaseHead.astro";
+import Header from "../components/layout/Header.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    blurb: string;
+    date: string;
+    featuredImage: string;
+  };
+}
+
+const {
+  content: { title, blurb, date, featuredImage },
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={blurb} />
+    <style>
+      .title {
+        font-size: 2em;
+        margin: 0.25em 0 0;
+      }
+      hr {
+        border-top: 1px solid #ddd;
+        margin: 1rem 0;
+      }
+      article {
+        width: 50%;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        <h1 class="title">{title}</h1>
+        {date && <time>{date}</time>}
+        <hr />
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>
