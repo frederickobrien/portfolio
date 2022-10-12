@@ -30,31 +30,30 @@ const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
       ul li a:visited {
         color: #8e32dc;
       }
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
     <Header />
     <main>
       <section>
-        <ul>
-          {
-            projects.map((project) => (
-              <li>
-                <time datetime={project.frontmatter.dateStarted}>
-                  {new Date(project.frontmatter.dateStarted).toLocaleDateString(
-                    "en-us",
-                    {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    }
-                  )}
-                </time>
-                <a href={project.url}>{project.frontmatter.title}</a>
-              </li>
-            ))
-          }
-        </ul>
+        <div>
+          <h2>Projects</h2>
+
+          <ul>
+            {
+              projects.map((project) => (
+                <li>
+                  <a href={project.url}>{project.frontmatter.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </section>
     </main>
   </body>

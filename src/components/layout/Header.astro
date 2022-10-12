@@ -4,25 +4,22 @@ import ContactLinks from "../ContactLinks.astro";
 
 <header>
   <div class="header-content">
-    <h2>Frederick O'Brien</h2>
+    <h2><a href="/">Frederick O'Brien</a></h2>
     <div class="subheading">Master of no trades</div>
     <nav>
       <ul>
         <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 <style>
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 25%;
-    display: flex;
-    align-items: center;
+  h2 a {
+    color: black;
+    text-decoration: none;
+  }
+  h2 a:hover {
+    opacity: 0.7;
   }
   h2 {
     margin: 0;
@@ -47,5 +44,24 @@ import ContactLinks from "../ContactLinks.astro";
     font-family: "Oswald", sans-serif;
     font-size: 25px;
     font-weight: 300;
+  }
+
+  /* TABLET */
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1025px) {
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 25%;
+      display: flex;
+      align-items: center;
+    }
   }
 </style>

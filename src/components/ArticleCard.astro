@@ -13,7 +13,7 @@ const { url, title, publication, publicationDate } = Astro.props;
   <a href={url}>
     <h3>{title}</h3>
   </a>
-  <div>
+  <div class="article-details">
     <i>{publication}</i>, {publicationDate}
   </div>
 </div>
@@ -21,8 +21,12 @@ const { url, title, publication, publicationDate } = Astro.props;
 <style>
   h3 {
     font-size: 1.5rem;
+    line-height: 120%;
   }
   .article-card {
     padding-bottom: 20px;
+  }
+  .article-details {
+    margin-top: 10px;
   }
 </style>

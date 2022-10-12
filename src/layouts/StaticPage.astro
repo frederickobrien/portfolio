@@ -5,36 +5,28 @@ import Header from "../components/layout/Header.astro";
 export interface Props {
   content: {
     title: string;
-    link: string;
     description: string;
-    dateStarted?: string;
-    updatedDate?: string;
-    heroImage?: string;
   };
 }
 
 const {
-  content: { title, link, description, heroImage },
+  content: { title, description },
 } = Astro.props;
-
-const fullLink = `https://${link}`;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
     <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
+      h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1.8rem;
       }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-      article {
+      .page-content {
         width: 90%;
         margin: auto;
+        padding-top: 25%;
       }
       .home-link {
         position: absolute;
@@ -55,7 +47,7 @@ const fullLink = `https://${link}`;
       /* DESKTOP */
 
       @media (min-width: 1025px) {
-        article {
+        .page-content {
           width: 50%;
           margin: auto;
         }
@@ -66,13 +58,9 @@ const fullLink = `https://${link}`;
   <body>
     <Header />
     <main>
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        <a href={fullLink}>{link}</a>
-        <hr />
+      <div class="page-content">
         <slot />
-      </article>
+      </div>
     </main>
   </body>
 </html>

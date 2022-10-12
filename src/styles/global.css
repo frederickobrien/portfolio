@@ -110,6 +110,10 @@ img {
   width: 100%;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 /* TABLET */
 
 @media (min-width: 768px) and (max-width: 1024px) {
