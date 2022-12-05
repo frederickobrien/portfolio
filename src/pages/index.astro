@@ -54,9 +54,9 @@ const weblogEntries = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
           ))
         }
       </HomepageSection>
-      <HomepageSection title="Web Log">
+      <!-- <HomepageSection title="Web Log">
         <p>Pending...</p>
-        <!-- {
+        {
           weblogEntries.map((weblog) => (
             <WeblogCard
               url={weblog.url}
@@ -66,8 +66,8 @@ const weblogEntries = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
               featuredImage={weblog.frontmatter.featuredImage}
             />
           ))
-        } -->
-      </HomepageSection>
+        }
+      </HomepageSection> -->
     </main>
   </body>
 </html>
