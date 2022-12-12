@@ -7,6 +7,10 @@ dateStarted: "Jan 10 2015"
 heroImage: "/projects/audioxide/featured.jpg"
 ---
 
-_Audioxide_ is a music webzine that I and two friends - [André Dack](https://twitter.com/AndreDack) and [Andrew Bridge](https://www.andrewhbridge.co.uk/) - have run since 2015. Our core shtick has been listening to albums together and publishing our thoughts as reviews, though we also dabble in articles, interviews and other oddities.
+_Audioxide_ is a music webzine that I and two friends - [André Dack](https://twitter.com/AndreDack) and [Andrew Bridge](https://www.andrewhbridge.co.uk/) - have run since 2015. It was born out of a hobby. The three of us listen to an album over the course of a week then spending an evening talking about it. We'd round up with a little summary of our thoughts, up to three favourite tracks, and a score out of ten.
 
-We've reviewed more than 280 albums and counting.
+Over time we figured we may as well publish these summaries somewhere, and so _Audioxide_ was born. Our core shtick remains reviewing albums together and publishing our thoughts as reviews, though we also dabble in articles, interviews and other oddities. We have our lulls and purple patches, but the site's still going strong.
+
+We've reviewed more than 280 albums and counting. We get a few thousand visitors per month (these numbers also [publicly viewable](https://audioxide.goatcounter.com/) courtesy of [GoatCounter](https://www.goatcounter.com/)). We even have the dubious honour of being treated as a legit source on Wikipedia.
+
+The current iteration of the site we built ourselves using Vue. All our code is publicly viewable on [GitHub](https://github.com/audioxide).
