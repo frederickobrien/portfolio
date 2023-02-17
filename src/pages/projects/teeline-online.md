@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/ProjectPage.astro"
 title: "teeline.online"
-description: "A (short)handy tool"
+description: "A (short)handy site"
 link: "teeline.online"
 dateStarted: "Mar 12 2022"
 heroImage: "/projects/teeline-online/featured.png"
