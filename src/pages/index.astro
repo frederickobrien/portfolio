@@ -19,6 +19,8 @@ const weblogEntries = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
     new Date(b.frontmatter.date).valueOf() -
     new Date(a.frontmatter.date).valueOf()
 );
+
+const closedPublications = ["Citizen Obsessed"];
 ---
 
 <!DOCTYPE html>
@@ -46,7 +48,11 @@ const weblogEntries = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
         {
           bylines.map((article) => (
             <ArticleCard
-              url={article.url}
+              url={
+                closedPublications.includes(article.publication)
+                  ? article.archiveUrl
+                  : article.url
+              }
               title={article.title}
               publication={article.publication}
               publicationDate={article.publicationDate}
