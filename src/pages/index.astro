@@ -14,7 +14,7 @@ const work = (await Astro.glob("./work/*.{md,mdx}")).sort(
     new Date(a.frontmatter.dateStarted).valueOf()
 );
 
-const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+const projects = (await Astro.glob("./play/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.dateStarted).valueOf() -
     new Date(a.frontmatter.dateStarted).valueOf()

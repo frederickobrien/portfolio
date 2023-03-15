@@ -3,7 +3,7 @@ import BaseHead from "../components/layout/BaseHead.astro";
 import Header from "../components/layout/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+const projects = (await Astro.glob("./play/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.dateStarted).valueOf() -
     new Date(a.frontmatter.dateStarted).valueOf()
