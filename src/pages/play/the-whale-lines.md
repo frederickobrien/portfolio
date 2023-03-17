@@ -4,7 +4,7 @@ title: "The Whale-Lines"
 description: "Real fake news"
 link: "thewhalelines.com"
 dateStarted: "Mar 12 2020"
-heroImage: "/projects/the-whale-lines/featured.jpg"
+heroImage: "/images/the-whale-lines/featured.jpg"
 ---
 
 A fake news paper, _The Whale-Lines_ publishes stories that are almost as absurd and silly as real life. It has been a handy outlet for me since _The Onion_ mysteriously doesn't respond to my emails, letters, or notes written on bricks thrown through their office window.

@@ -8,7 +8,13 @@ import ArticleCard from "../components/ArticleCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import WeblogCard from "../components/WeblogCard.astro";
 
-const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+const work = (await Astro.glob("./work/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.dateStarted).valueOf() -
+    new Date(a.frontmatter.dateStarted).valueOf()
+);
+
+const projects = (await Astro.glob("./play/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.dateStarted).valueOf() -
     new Date(a.frontmatter.dateStarted).valueOf()
@@ -31,7 +37,20 @@ const closedPublications = ["Citizen Obsessed"];
   <body>
     <Header />
     <main>
-      <HomepageSection title="Projects">
+      <HomepageSection title="Work">
+        {
+          work.map((work) => (
+            <ProjectCard
+              url={work.url}
+              title={work.frontmatter.title}
+              description={work.frontmatter.description}
+              heroImage={work.frontmatter.heroImage}
+              heroImageAlt={work.frontmatter.heroImageAlt}
+            />
+          ))
+        }
+      </HomepageSection>
+      <HomepageSection title="Play">
         {
           projects.map((project) => (
             <ProjectCard
@@ -44,7 +63,7 @@ const closedPublications = ["Citizen Obsessed"];
           ))
         }
       </HomepageSection>
-      <HomepageSection title="Articles">
+      <HomepageSection title="Writings">
         {
           bylines.map((article) => (
             <ArticleCard
