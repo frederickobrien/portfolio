@@ -5,7 +5,7 @@ description: "Gonzo engineering"
 type: "work"
 link: "theguardian.com"
 dateStarted: "Apr 07 2021"
-heroImage: "/images/the-guardian/galaxies.webp"
+heroImage: "/images/the-guardian/featured.webp"
 ---
 
 I code for _The Guardian_. I was one of the 2021 software engineering fellowship intake and am currently part of the team responsible for Ophan, the paper's real-time, in-house content analytics tool.
