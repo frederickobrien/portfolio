@@ -4,7 +4,7 @@ title: "Audioxide"
 description: "The 404th most trusted voice in music"
 link: "audioxide.com"
 dateStarted: "Jan 10 2015"
-heroImage: "/images/audioxide/featured.jpg"
+heroImage: "/images/audioxide/featured-greyscale.jpg"
 ---
 
 _Audioxide_ is a music webzine that I and two friends - [André Dack](https://twitter.com/AndreDack) and [Andrew Bridge](https://www.andrewhbridge.co.uk/) - have run since 2015. It was born out of a hobby. The three of us listen to an album over the course of a week then spending an evening talking about it. We'd round up with a little summary of our thoughts, up to three favourite tracks, and a score out of ten.
