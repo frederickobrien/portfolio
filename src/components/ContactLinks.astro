@@ -1,13 +1,16 @@
 ---
-import personalDetails from "../../data/personalInfo.json";
+import personalDetails from "../../data/myDetails.json";
+import type { MyDetails } from "../../data/types";
 
-const mailToLink = `mailto:${personalDetails.details.emailAddress}`;
+const myDetails: MyDetails = personalDetails;
+
+const mailToLink = `mailto:${myDetails.personalInfo.emailAddress}`;
 ---
 
 <section class="contact">
   <ul class="contact-icons-list">
     <li>
-      <a href={personalDetails.accounts.gitHub.profileLink}
+      <a href=`https://github.com/${myDetails.socialMediaHandles.gitHub}`
         ><img
           class="contact-icon"
           src="/icons/github-icon.png"
@@ -27,7 +30,7 @@ const mailToLink = `mailto:${personalDetails.details.emailAddress}`;
       </a>
     </li>
     <li>
-      <a href={personalDetails.accounts.twitter.profileLink}
+      <a href=`https://twitter.com/${myDetails.socialMediaHandles.twitter}`
         ><img
           class="contact-icon"
           src="/icons/twitter-icon.png"
