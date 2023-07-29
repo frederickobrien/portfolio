@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Competent Crew training in the Solent",
+        "startDate": "2022-09-26",
+        "endDate": "2022-09-30",
+        "vesselDetails": {
+            "name": "Orinoco Flow",
+            "notes": "Jeanneau 37 sailing yacht"
+        },
+        "voyageDetails": "Hamble - Beaulieu - Cowes - Portsmouth - Yarmouth - Hamble",
+        "daysOnBoard": 5,
+        "distanceLogged": 85,
+        "nightHours": 4,
+        "skipper": "Nick"
+    },
+    {
+        "title": "Solent weekend cruise",
+        "startDate": "2023-07-22",
+        "endDate": "2023-07-23",
+        "vesselDetails": {
+            "name": "Fleur de Lis",
+            "notes": "Beneteau 37 sailing yacht"
+        },
+        "voyageDetails": "Hamble - Cowes - Southampton - Hamble",
+        "daysOnBoard": 2,
+        "distanceLogged": 25,
+        "nightHours": 0,
+        "skipper": "Helen Pettifer"
+    },
+    {
+        "title": "Day Skipper training in the Solent",
+        "startDate": "2023-07-24",
+        "endDate": "2023-07-28",
+        "vesselDetails": {
+            "name": "Quantum Leap",
+            "notes": "Sunfast 37 sailing yacht"
+        },
+        "voyageDetails": "Hamble - Cowes - Southampton - Yarmouth - Lymington - Portsmouth - Hamble",
+        "daysOnBoard": 5,
+        "distanceLogged": 120,
+        "nightHours": 5,
+        "skipper": "Richard Payne"
+    }
+]
