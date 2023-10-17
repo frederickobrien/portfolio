@@ -14,3 +14,13 @@ export interface MyDetails {
     endDate: string;
   }[];
 }
+
+export interface BylineDetails {
+  title: string;
+  publication: string;
+  publicationDate: string;
+  url: string;
+  archiveUrl: string;
+  contentType: string;
+  soleAuthor: boolean;
+}
