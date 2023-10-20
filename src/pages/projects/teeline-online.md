@@ -7,6 +7,7 @@ link: "teeline.online"
 dateStarted: "2022-03-12"
 dateFinished: ""
 heroImage: "/images/teeline-online/featured-2.png"
+heroImageAlt: "Screenshot of outline cards on teeline.online"
 ---
 
 teeline.online is an online resource for studying Teeline shorthand. Features include hundreds of animated outlines in a searchable dictionary, a 'revise' page where people can sear outlines into their brains, and a basic syllabus outlining how Teeline works.

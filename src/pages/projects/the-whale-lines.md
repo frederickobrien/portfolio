@@ -7,6 +7,7 @@ link: "thewhalelines.com"
 dateStarted: "2020-03-12"
 dateFinished: ""
 heroImage: "/images/the-whale-lines/site-featured.jpg"
+heroImageAlt: "Black and white photograph of old newspapers strewn across the floor"
 ---
 
 A fake news paper, _The Whale-Lines_ publishes stories that are almost as absurd and silly as real life. It has been a handy outlet for me since _The Onion_ mysteriously doesn't respond to my emails, letters, or notes written on bricks thrown through their office window.

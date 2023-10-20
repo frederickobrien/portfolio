@@ -10,6 +10,7 @@ interface ProjectMetadata {
   dateStarted: string;
   dateFinished: string;
   heroImage: string;
+  heroImageAlt: string;
 }
 
 export interface Props {
@@ -25,6 +26,7 @@ const {
     dateStarted,
     dateFinished,
     heroImage,
+    heroImageAlt,
   },
 } = Astro.props;
 
@@ -36,7 +38,11 @@ const fullLink = `https://${link}`;
   description={description}
 >
   <article>
-    {heroImage && <img width="100%" height={"auto"} src={heroImage} alt="" />}
+    {
+      heroImage && (
+        <img width="100%" height={"auto"} src={heroImage} alt={heroImageAlt} />
+      )
+    }
     <h1 class="title">{title}</h1>
     <p>{description}</p>
     <p>{formatDateRange(dateStarted, dateFinished)}</p>

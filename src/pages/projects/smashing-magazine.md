@@ -8,6 +8,7 @@ link: "smashingmagazine.com"
 dateStarted: "2019-11-08"
 dateFinished: ""
 heroImage: "/images/smashing-magazine/featured-oil.jpg"
+heroImageAlt: "Sketch of web design layout"
 ---
 
 I write and edit things for _Smashing Magazine_. I am somehow its soft skills and professional development editor. I've had the pleasure of working with NYT privacy whizzes, CSS wizards, code artists, and more.
