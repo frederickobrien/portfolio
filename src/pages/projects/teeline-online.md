@@ -2,8 +2,10 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "teeline.online"
 description: "A (short)handy site"
+type: "play"
 link: "teeline.online"
-dateStarted: "Mar 12 2022"
+dateStarted: "2022-03-12"
+dateFinished: ""
 heroImage: "/images/teeline-online/featured-2.png"
 ---
 

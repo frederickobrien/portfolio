@@ -2,8 +2,10 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "The Whale-Lines"
 description: "Real fake news"
+type: "play"
 link: "thewhalelines.com"
-dateStarted: "Mar 12 2020"
+dateStarted: "2020-03-12"
+dateFinished: ""
 heroImage: "/images/the-whale-lines/site-featured.jpg"
 ---
 

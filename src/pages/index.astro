@@ -5,16 +5,9 @@ import bylines from "../../data/bylines.json";
 import HomepageSection from "../components/HomepageSection.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import WeblogCard from "../components/WeblogCard.astro";
 import { combineBylinesWithWeblogEntries } from "../utils/allBylines";
 
-const work = (await Astro.glob("./work/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.dateStarted).valueOf() -
-    new Date(a.frontmatter.dateStarted).valueOf()
-);
-
-const projects = (await Astro.glob("./play/*.{md,mdx}")).sort(
+const allProjects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.dateStarted).valueOf() -
     new Date(a.frontmatter.dateStarted).valueOf()
@@ -32,7 +25,7 @@ const weblogs = weblogEntries.map((weblog) => ({
   soleAuthor: true,
 }));
 
-const allWritings = combineBylinesWithWeblogEntries(bylines, weblogs);
+const allWritings = combineBylinesWithWeblogEntries(bylines, []);
 
 const closedPublications = ["Citizen Obsessed"];
 ---
@@ -41,28 +34,32 @@ const closedPublications = ["Citizen Obsessed"];
   <div class="homepage-content-container">
     <HomepageSection title="Work">
       {
-        work.map((work) => (
-          <ProjectCard
-            url={work.url}
-            title={work.frontmatter.title}
-            description={work.frontmatter.description}
-            heroImage={work.frontmatter.heroImage}
-            heroImageAlt={work.frontmatter.heroImageAlt}
-          />
-        ))
+        allProjects
+          .filter((project) => project.frontmatter.type === "work")
+          .map((work) => (
+            <ProjectCard
+              url={work.url}
+              title={work.frontmatter.title}
+              description={work.frontmatter.description}
+              heroImage={work.frontmatter.heroImage}
+              heroImageAlt={work.frontmatter.heroImageAlt}
+            />
+          ))
       }
     </HomepageSection>
     <HomepageSection title="Play">
       {
-        projects.map((project) => (
-          <ProjectCard
-            url={project.url}
-            title={project.frontmatter.title}
-            description={project.frontmatter.description}
-            heroImage={project.frontmatter.heroImage}
-            heroImageAlt={project.frontmatter.heroImageAlt}
-          />
-        ))
+        allProjects
+          .filter((project) => project.frontmatter.type === "play")
+          .map((project) => (
+            <ProjectCard
+              url={project.url}
+              title={project.frontmatter.title}
+              description={project.frontmatter.description}
+              heroImage={project.frontmatter.heroImage}
+              heroImageAlt={project.frontmatter.heroImageAlt}
+            />
+          ))
       }
     </HomepageSection>
     <HomepageSection title="Writings">

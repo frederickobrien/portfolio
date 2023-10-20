@@ -2,8 +2,10 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "Audioxide"
 description: "The 404th most trusted voice in music"
+type: "play"
 link: "audioxide.com"
-dateStarted: "Jan 10 2015"
+dateStarted: "2015-01-10"
+dateFinished: ""
 heroImage: "/images/audioxide/featured-greyscale.jpg"
 ---
 

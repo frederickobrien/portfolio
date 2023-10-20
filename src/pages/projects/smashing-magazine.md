@@ -2,10 +2,11 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "Smashing Magazine"
 description: "World wide writing"
+role: "Soft skills and professional development editor"
 type: "work"
 link: "smashingmagazine.com"
-dateStarted: "November 08 2019"
-dateFinished: false
+dateStarted: "2019-11-08"
+dateFinished: ""
 heroImage: "/images/smashing-magazine/featured-oil.jpg"
 ---
 

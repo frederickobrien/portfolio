@@ -2,9 +2,11 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "The Guardian"
 description: "Gonzo engineering"
+role: "Software engineer"
 type: "work"
 link: "theguardian.com"
-dateStarted: "Apr 07 2021"
+dateStarted: "2021-04-07"
+dateFinished: ""
 heroImage: "/images/the-guardian/ascii-guardian-logo.png"
 ---
 

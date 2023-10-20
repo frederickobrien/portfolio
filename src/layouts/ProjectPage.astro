@@ -1,28 +1,45 @@
 ---
 import BaseLayout from "../components/layout/BaseLayout.astro";
+import { formatDateRange } from "../utils/dateTimeFormatters";
+
+interface ProjectMetadata {
+  title: string;
+  link: string;
+  description: string;
+  role?: string;
+  dateStarted: string;
+  dateFinished: string;
+  heroImage: string;
+}
 
 export interface Props {
-  content: {
-    title: string;
-    link: string;
-    description: string;
-    dateStarted?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
+  content: ProjectMetadata;
 }
 
 const {
-  content: { title, link, description, heroImage },
+  content: {
+    title,
+    link,
+    description,
+    role,
+    dateStarted,
+    dateFinished,
+    heroImage,
+  },
 } = Astro.props;
 
 const fullLink = `https://${link}`;
 ---
 
-<BaseLayout titl={title} description={description}>
+<BaseLayout
+  title={`${title} | Projects | Frederick O'Brien`}
+  description={description}
+>
   <article>
-    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+    {heroImage && <img width="100%" height={"auto"} src={heroImage} alt="" />}
     <h1 class="title">{title}</h1>
+    <p>{description}</p>
+    <p>{formatDateRange(dateStarted, dateFinished)}</p>
     <a href={fullLink}>{link}</a>
     <hr />
     <slot />
@@ -30,6 +47,9 @@ const fullLink = `https://${link}`;
 </BaseLayout>
 
 <style>
+  article {
+    padding-bottom: 3rem;
+  }
   .title {
     font-size: 2em;
     margin: 0.25em 0 0;
@@ -49,7 +69,11 @@ const fullLink = `https://${link}`;
     font-size: 1.3rem;
   }
   img {
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    margin-bottom: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
   }
