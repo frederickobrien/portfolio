@@ -2,11 +2,13 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "Social Streets"
 description: "Hyperlocal journalism"
+role: "Editorial assistant"
 type: "work"
 link: "socialstreets.co"
-dateStarted: "November 08 2018"
-dateFinished: "November 08 2019"
+dateStarted: "2018-11-08"
+dateFinished: "2019-11-08"
 heroImage: "/images/social-streets/frank-wang.jpg"
+heroImageAlt: "Photograph of Frank Wang supporter demonstration"
 ---
 
 I cut my teeth in journalism working as an editorial assistant for at _Roman Road LDN_, the then flagship publication of hyperlocal publisher Social Streets. Was responsible for news, features, social media, interviews, history... all sorts.

@@ -2,10 +2,13 @@
 layout: "../../layouts/ProjectPage.astro"
 title: "The Guardian"
 description: "Gonzo engineering"
+role: "Software engineer"
 type: "work"
 link: "theguardian.com"
-dateStarted: "Apr 07 2021"
+dateStarted: "2021-04-07"
+dateFinished: ""
 heroImage: "/images/the-guardian/ascii-guardian-logo.png"
+heroImageAlt: "Guardian logo made up of 0s and dots"
 ---
 
 I code for _The Guardian_. I was one of the 2021 software engineering fellowship intake and am currently part of the team responsible for Ophan, the paper's real-time, in-house content analytics tool.

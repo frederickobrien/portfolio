@@ -1,7 +1,5 @@
 ---
-import BaseHead from "../components/layout/BaseHead.astro";
-import Header from "../components/layout/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import BaseLayout from "../components/layout/BaseLayout.astro";
 
 const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
   (a, b) =>
@@ -10,52 +8,50 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
 );
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
+<BaseLayout title="Weblog" description="Words n' that">
+  <div class="weblog-container">
+    <h2>Weblog</h2>
+    <ul>
+      {
+        weblogs.map((weblog) => (
+          <li>
+            <time datetime={weblog.frontmatter.pubDate}>
+              {new Date(weblog.frontmatter.publicationDate).toLocaleDateString(
+                "en-us",
+                {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                }
+              )}
+            </time>
+            <a href={weblog.url}>{weblog.frontmatter.title}</a>
+          </li>
+        ))
       }
-      ul li {
-        display: flex;
-      }
-      ul li time {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #595959;
-      }
-      ul li a:visited {
-        color: #8e32dc;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section>
-        <ul>
-          {
-            weblogs.map((weblog) => (
-              <li>
-                <time datetime={weblog.frontmatter.pubDate}>
-                  {new Date(weblog.frontmatter.pubDate).toLocaleDateString(
-                    "en-us",
-                    {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    }
-                  )}
-                </time>
-                <a href={weblog.url}>{weblog.frontmatter.title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .weblog-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  ul {
+    list-style-type: none;
+    padding: unset;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li time {
+    flex: 0 0 130px;
+    font-style: italic;
+    color: #595959;
+  }
+  ul li a:visited {
+    color: #8e32dc;
+  }
+</style>

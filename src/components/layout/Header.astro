@@ -5,26 +5,29 @@ import lines from "../../../data/taglines.json";
 
 <header>
   <div class="header-content">
-    <img
-      src="/images/self-portrait.jpg"
-      alt="Self portrait of Frederick O'Brien"
-    />
-    <h1><a href="/">Frederick O'Brien</a></h1>
-    <div id="subheading"></div>
+    <a href="/">
+      <img
+        src="/images/self-portrait.jpg"
+        alt="Self portrait of Frederick O'Brien"
+      />
+      <h1>Frederick O'Brien</h1>
+      <div id="subheading"></div>
+    </a>
+
     <script is:inline>
-      const taglines = [
-        "Master of no trades",
-        "Of no particular consequence",
-        "Could be worse",
-        "'Like a badly written novel'",
-        "Follymath",
-        "Occasionally competent",
-      ];
+    const taglines = [
+      "Master of no trades",
+      "Of no particular consequence",
+      "Could be worse",
+      "'Like a badly written novel'",
+      "Follymath",
+      "Occasionally competent",
+    ];
 
-      const randomTagline =
-        taglines[Math.floor(Math.random() * taglines.length)];
+    const randomTagline =
+      taglines[Math.floor(Math.random() * taglines.length)];
 
-      document.getElementById("subheading").innerHTML += randomTagline;
+    document.getElementById("subheading").innerHTML += randomTagline;
     </script>
     <!-- <p>
       Software engineer at <a
@@ -39,12 +42,13 @@ import lines from "../../../data/taglines.json";
     <ContactLinks />
   </div>
 </header>
+
 <style>
-  h1 a {
+  a {
     color: black;
     text-decoration: none;
   }
-  h1 a:hover {
+  a:hover {
     opacity: 0.7;
   }
   h1 {
