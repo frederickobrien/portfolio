@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found | Frederick O'Brien"
+  description="Sory about that."
+>
+  <div class="error-container">
+    <h2>Page not found. Try something else.</h2>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .error-container h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
