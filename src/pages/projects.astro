@@ -1,0 +1,65 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import BaseLayout from "../components/layout/BaseLayout.astro";
+
+const projects = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.dateStarted).valueOf() -
+    new Date(a.frontmatter.dateStarted).valueOf()
+);
+---
+
+<BaseLayout title="Weblog" description="Words n' that">
+  <div class="weblog-container">
+    <h2>Projects and Experiences</h2>
+    <div class="projects-container">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            url={project.url}
+            title={project.frontmatter.title}
+            description={project.frontmatter.description}
+            heroImage={project.frontmatter.heroImage}
+            heroImageAlt={project.frontmatter.heroImageAlt}
+          />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .weblog-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  ul {
+    list-style-type: none;
+    padding: unset;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li time {
+    flex: 0 0 130px;
+    font-style: italic;
+    color: #595959;
+  }
+  ul li a:visited {
+    color: #8e32dc;
+  }
+  @media screen and (min-width: 1024px) {
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+</style>

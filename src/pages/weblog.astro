@@ -9,25 +9,36 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
 ---
 
 <BaseLayout title="Weblog" description="Words n' that">
-  <ul>
-    {
-      weblogs.map((weblog) => (
-        <li>
-          <time datetime={weblog.frontmatter.pubDate}>
-            {new Date(weblog.frontmatter.pubDate).toLocaleDateString("en-us", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-          </time>
-          <a href={weblog.url}>{weblog.frontmatter.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="weblog-container">
+    <h2>Weblog</h2>
+    <ul>
+      {
+        weblogs.map((weblog) => (
+          <li>
+            <time datetime={weblog.frontmatter.pubDate}>
+              {new Date(weblog.frontmatter.publicationDate).toLocaleDateString(
+                "en-us",
+                {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                }
+              )}
+            </time>
+            <a href={weblog.url}>{weblog.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>
 
 <style>
+  .weblog-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+  }
   ul {
     list-style-type: none;
     padding: unset;

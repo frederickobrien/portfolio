@@ -30,12 +30,12 @@ const { url, title, description, heroImage, heroImageAlt } = Astro.props;
   }
   .project-card {
     padding-bottom: 20px;
-    box-shadow: 0px 0px 10px 5px #dedede;
-    margin: 0 0 40px 0;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    margin: 0;
     border-radius: 10px;
     overflow: hidden;
-    /* border: solid #121212 5px; */
-    /* background-color: #121212; */
+    border: solid #121212 3px;
+    background-color: #323232;
   }
   .project-card:hover {
     transform: scale(1.01);
@@ -44,7 +44,7 @@ const { url, title, description, heroImage, heroImageAlt } = Astro.props;
     padding: 10px 20px;
   }
   a {
-    color: black;
+    color: white;
     text-decoration: none;
   }
 </style>

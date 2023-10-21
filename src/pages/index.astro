@@ -28,11 +28,13 @@ const weblogs = weblogEntries.map((weblog) => ({
 const allWritings = combineBylinesWithWeblogEntries(bylines, []);
 
 const closedPublications = ["Citizen Obsessed"];
+
+const projectCardsGap = "2rem";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <div class="homepage-content-container">
-    <HomepageSection title="Work">
+    <HomepageSection title="Work" gapBetweenItems={projectCardsGap}>
       {
         allProjects
           .filter((project) => project.frontmatter.type === "work")
@@ -47,7 +49,7 @@ const closedPublications = ["Citizen Obsessed"];
           ))
       }
     </HomepageSection>
-    <HomepageSection title="Play">
+    <HomepageSection title="Play" gapBetweenItems={projectCardsGap}>
       {
         allProjects
           .filter((project) => project.frontmatter.type === "play")
@@ -62,7 +64,7 @@ const closedPublications = ["Citizen Obsessed"];
           ))
       }
     </HomepageSection>
-    <HomepageSection title="Writings">
+    <HomepageSection title="Writings" gapBetweenItems="0">
       {
         allWritings.map((article) => (
           <ArticleCard
