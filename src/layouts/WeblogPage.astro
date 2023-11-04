@@ -4,18 +4,21 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
 export interface Props {
   content: {
     title: string;
-    blurb: string;
+    standfirst: string;
     publicationDate: string;
     featuredImage: string;
   };
 }
 
 const {
-  content: { title, blurb, publicationDate: pubDate, featuredImage },
+  content: { title, standfirst, publicationDate: pubDate, featuredImage },
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={blurb}>
+<BaseLayout
+  title={`${title} | Weblog | Frederick O'Brien`}
+  description={standfirst}
+>
   <article>
     <h1 class="title">{title}</h1>
     {pubDate && <time>{pubDate}</time>}
@@ -27,14 +30,11 @@ const {
 <style>
   .title {
     font-size: 2em;
-    margin: 0.25em 0 0;
-  }
-  hr {
-    border-top: 1px solid #ddd;
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem 0;
   }
   article {
     width: 50%;
-    margin: auto;
+    max-width: 800px;
+    margin: 2rem auto;
   }
 </style>

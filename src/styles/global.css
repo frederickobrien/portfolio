@@ -129,8 +129,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-a {
+h6 {
   font-family: "Oswald", sans-serif;
 }
 
@@ -157,6 +156,11 @@ h5 {
 
 h6 {
   font-size: 1.3rem;
+}
+
+hr {
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
 }
 
 img {

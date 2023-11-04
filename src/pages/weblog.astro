@@ -54,4 +54,8 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
   ul li a:visited {
     color: #8e32dc;
   }
+  img {
+    max-width: 100%;
+    margin: 30px auto;
+  }
 </style>
