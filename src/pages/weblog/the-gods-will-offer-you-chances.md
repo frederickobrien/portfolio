@@ -19,7 +19,7 @@ There is a Charles Bukowski poem I like called ["The Laughing Heart"](https://th
 
 There are a handful of moments in my life that those words ring true for - moments when an opportunity presented itself and I was seized, albeit briefly, by an unerring clarity of mind and purpose. Sometimes a thing is perfect, and you want it.
 
-I'm not religious. I don't believe in god, destiny, fate, any of that. I think people generally get what they get rather than what they deserve, and when I'm on the recieving end of something good I generally chalk it up to circumstance or privilege rather than any worthiness on my part.
+I'm not religious. I don't believe in god, destiny, fate, any of that. I think people generally get what they get rather than what they deserve, and when I'm on the recieving end of something good I'd sooner chalk it up to circumstance or privilege than to any worthiness on my part.
 
 I do, however, think there are things that are worth caring about and things that are not, and that there is value in knowing the difference. For starters it frees up mental energy for being on the watch.
 
