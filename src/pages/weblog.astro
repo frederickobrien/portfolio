@@ -34,6 +34,9 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
 </BaseLayout>
 
 <style>
+  h2 {
+    text-decoration: underline;
+  }
   .weblog-container {
     text-align: center;
     max-width: 800px;
@@ -42,6 +45,7 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
   ul {
     list-style-type: none;
     padding: unset;
+    font-size: 1.4rem;
   }
   ul li {
     display: flex;
@@ -53,5 +57,9 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
   }
   ul li a:visited {
     color: #8e32dc;
+  }
+  img {
+    max-width: 100%;
+    margin: 30px auto;
   }
 </style>

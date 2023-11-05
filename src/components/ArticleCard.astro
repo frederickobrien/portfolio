@@ -14,7 +14,9 @@ const { url, title, publication, publicationDate } = Astro.props;
     <h3>{title}</h3>
   </a>
   <div class="article-details">
-    <i>{publication}</i>, {publicationDate}
+    {publication === "Weblog" ? publication : <i>{publication}</i>}, {
+      publicationDate
+    }
   </div>
 </div>
 
