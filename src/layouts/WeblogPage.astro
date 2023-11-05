@@ -19,8 +19,9 @@ const {
   title={`${title} | Weblog | Frederick O'Brien`}
   description={standfirst}
 >
+  <a href="/weblog"><h1>Weblog</h1></a>
   <article>
-    <h1 class="title">{title}</h1>
+    <h2 class="title">{title}</h2>
     {pubDate && <time>{pubDate}</time>}
     <hr />
     <slot />
@@ -28,13 +29,30 @@ const {
 </BaseLayout>
 
 <style>
+  a {
+    color: black;
+  }
+  h1 {
+    text-align: center;
+    margin: 2rem 0;
+    text-decoration: underline;
+  }
   .title {
     font-size: 2em;
-    margin: 1rem 0 0.5rem 0;
+    padding: 0;
+    margin: 0.5rem 0 0.5rem 0;
   }
   article {
-    width: 50%;
-    max-width: 800px;
-    margin: 2rem auto;
+    width: 90%;
+    margin: auto;
+    padding: 0 0 2rem 0;
+  }
+  /* DESKTOP */
+
+  @media (min-width: 1025px) {
+    article {
+      width: 50%;
+      margin: 0 auto;
+    }
   }
 </style>
