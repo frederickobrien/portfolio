@@ -3,8 +3,8 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
 
 const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
   (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
+    new Date(b.frontmatter.publicationDate).valueOf() -
+    new Date(a.frontmatter.publicationDate).valueOf()
 );
 ---
 
@@ -15,7 +15,7 @@ const weblogs = (await Astro.glob("./weblog/*.{md,mdx}")).sort(
       {
         weblogs.map((weblog) => (
           <li>
-            <time datetime={weblog.frontmatter.pubDate}>
+            <time datetime={weblog.frontmatter.publicationDate}>
               {new Date(weblog.frontmatter.publicationDate).toLocaleDateString(
                 "en-us",
                 {

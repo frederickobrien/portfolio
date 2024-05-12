@@ -22,7 +22,7 @@ const {
   <a href="/weblog"><h1>Weblog</h1></a>
   <article>
     <h2 class="title">{title}</h2>
-    {pubDate && <time>{pubDate}</time>}
+    {pubDate && <time>{"0" + pubDate}</time>}
     <hr />
     <slot />
   </article>
