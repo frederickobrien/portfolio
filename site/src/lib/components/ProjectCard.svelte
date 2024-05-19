@@ -53,7 +53,7 @@
 	}
 	img {
 		aspect-ratio: 3/2;
-		height: 100%;
+		width: 100%;
 		border-radius: 7px 0 0 7px;
 	}
 	h3 {
