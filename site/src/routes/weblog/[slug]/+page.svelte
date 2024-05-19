@@ -6,7 +6,7 @@
 
 <article>
 	<h3>{data.title}</h3>
-	<p class="date">{data.date}</p>
+	<div class="date"><time datetime={data.date}>{data.date}</time></div>
 	<svelte:component this={data.content} />
 </article>
 
@@ -15,5 +15,10 @@
 	h3,
 	.date {
 		text-align: center;
+	}
+	h3 {
+		font-size: 2rem;
+		line-height: 1.2;
+		margin-bottom: 0.5rem;
 	}
 </style>

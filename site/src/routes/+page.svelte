@@ -1,56 +1,52 @@
 <script lang="ts">
-	import bylines from '../data/bylines.json';
-	export let data;
+	import BylineCard from '$lib/components/BylineCard.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import type { BylineDetails } from '$lib/types/types.js';
 
-	const work = data.projects.filter((item) => item.meta.type === 'work');
-	const play = data.projects.filter((item) => item.meta.type === 'play');
+	const { data } = $props();
+
+	const work = data.projects.filter((item) => item.meta.type === 'work').slice(0, 3);
+	const play = data.projects.filter((item) => item.meta.type === 'play').slice(0, 3);
+	const recentWritings: BylineDetails[] = data.writings.slice(0, 10);
 </script>
 
-<div class="container">
+{#snippet homepageSection(heading, data)}
 	<div>
-		<h2>Work</h2>
-		{#each work as exploit}
-			<div>
-				<a href={exploit.path}><h3>{exploit.meta.title}</h3></a>
-				<div>{exploit.meta.description}</div>
-			</div>
+		<h2>{heading}</h2>
+		{#each data as project}
+			<ProjectCard {...project} />
 		{/each}
+		<a href="/projects">See all</a>→
 	</div>
-	<div>
-		<h2>Play</h2>
-		{#each play as exploit}
-			<div>
-				<a href={exploit.path}><h3>{exploit.meta.title}</h3></a>
-				<div>{exploit.meta.description}</div>
-			</div>
-		{/each}
-	</div>
+{/snippet}
+
+<div class="homepage-container">
+	{@render homepageSection('Work', work)}
+	{@render homepageSection('Play', play)}
 	<div>
 		<h2>Writings</h2>
 
-		{#each bylines as byline}
-			<div class="byline-card">
-				<a href={byline.url}><h4>{byline.title}</h4></a>
-				<div>{byline.publication}</div>
-				<div>{byline.publicationDate}</div>
-			</div>
+		{#each recentWritings as byline}
+			<BylineCard {...byline} />
 		{/each}
+		<a href="/writings">See all</a>→
 	</div>
 </div>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-	.byline-card {
+	h2 {
+		text-align: center;
 		margin-bottom: 1rem;
 	}
+	.homepage-container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
 	@media (min-width: 768px) {
-		.container {
+		.homepage-container {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
 </style>

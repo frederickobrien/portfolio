@@ -1,4 +1,4 @@
-import { fetchExploitPosts as fetchProjectPosts } from '$lib/utils/fetch-markdown-posts';
+import { fetchProjectPosts } from '$lib/utils/fetch-markdown-posts';
 import { json } from '@sveltejs/kit';
 
 export const GET = async () => {

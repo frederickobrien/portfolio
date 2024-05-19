@@ -8,7 +8,7 @@
 }
 
 :root {
-	--regular-font-size: 1.4rem;
+	--regular-font-size: 1.3rem;
 }
 
 p {
@@ -24,4 +24,22 @@ h4,
 h5,
 h6 {
 	font-family: 'Oswald', sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+article {
+	max-width: 800px;
+	margin: 1rem auto 0;
+}
+
+blockquote {
+	font-style: italic;
+	padding-left: 2rem;
+	border-left: 3px solid #333;
+	p {
+		margin: 0 0 0.5rem 0;
+	}
 }

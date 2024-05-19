@@ -1,13 +1,16 @@
-import type { ExploitDetails } from '$lib/types/types.js';
+import type { ProjectDetails } from '$lib/types/types.js';
 
 export const load = async ({ fetch }) => {
-	const response = await fetch(`/api/projects`);
+	const projectsResponse = await fetch(`/api/projects`);
 	const projects: {
-		meta: ExploitDetails;
+		meta: ProjectDetails;
 		path: string;
-	}[] = await response.json();
+	}[] = await projectsResponse.json();
+	const writingsResponse = await fetch(`/api/writings`);
+	const writings = await writingsResponse.json();
 
 	return {
-		projects
+		projects,
+		writings
 	};
 };

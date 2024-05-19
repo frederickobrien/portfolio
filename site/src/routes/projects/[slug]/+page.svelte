@@ -14,4 +14,7 @@
 	h3 {
 		text-align: center;
 	}
+	h3 {
+		font-size: 2rem;
+	}
 </style>

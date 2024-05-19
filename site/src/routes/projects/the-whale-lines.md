@@ -13,7 +13,7 @@ A fake news paper, _The Whale-Lines_ publishes stories that are almost as absurd
 
 The name comes from one of my favourite passages in Herman Melville's novel [_Moby-Dick_](https://www.gutenberg.org/ebooks/2701):
 
-> 'All men live enveloped in whale-lines. All are born with halters round their necks; but it is only when caught in the swift, sudden turn of death, that mortals realize the silent, subtle, everpresent perils of life.'
+> All men live enveloped in whale-lines. All are born with halters round their necks; but it is only when caught in the swift, sudden turn of death, that mortals realize the silent, subtle, everpresent perils of life.
 
 Built using [Eleventy](https://www.11ty.dev/), _The Whale-Lines_ is the first website I made entirely on my own.
 

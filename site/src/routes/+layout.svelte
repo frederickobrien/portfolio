@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Header from '$lib/Header.svelte';
-	import Footer from '$lib/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
@@ -16,7 +16,7 @@
 
 <style>
 	main {
-		margin: 2rem auto 0;
+		margin: 1rem auto 0;
 		width: 95%;
 	}
 </style>

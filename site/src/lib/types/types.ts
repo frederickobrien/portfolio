@@ -3,7 +3,7 @@ export interface WeblogDetails {
 	date: string;
 }
 
-export interface ExploitDetails {
+export interface ProjectDetails {
 	title: string;
 	description: string;
 	role: string;
@@ -13,4 +13,14 @@ export interface ExploitDetails {
 	dateFinished: string;
 	heroImage: string;
 	heroImageAlt: string;
+}
+
+export interface BylineDetails {
+	title: string;
+	publication: string;
+	publicationDate: string;
+	url: string;
+	archiveUrl: string;
+	contentType: string;
+	soleAuthor: boolean;
 }
