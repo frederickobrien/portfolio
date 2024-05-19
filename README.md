@@ -1,6 +1,6 @@
 # Portfolio website
 
-Website to showcase my astonishing writing, design, and coding skills. Currently built using [Astro](https://astro.build/) and hosted on [Netlify](https://netlify.com).
+Website to showcase my astonishing writing, design, and coding skills. Currently built using [Svelte](https://svelte.dev/) and hosted on [Netlify](https://netlify.com).
 
 ## Fonts
 
