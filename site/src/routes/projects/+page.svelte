@@ -20,7 +20,7 @@
 <style>
 	h2 {
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 	section {
 		max-width: 800px;

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import taglines from '../../data/taglines.json';
+	import taglines from '../../../data/taglines.json';
+	import HeaderLink from './HeaderLink.svelte';
 
 	const tagline = taglines[Math.floor(Math.random() * taglines.length)];
 
@@ -14,12 +15,12 @@
 	<div class="header-content">
 		<a href="/"><h1>Frederick O'Brien</h1></a>
 
-		<div>{tagline}</div>
+		<div class="tagline">{tagline}</div>
 
 		<nav>
 			<ul>
 				{#each navSections as { title, href }}
-					<li><a {href}>{title}</a></li>
+					<li><HeaderLink {href} {title} /></li>
 				{/each}
 			</ul>
 		</nav>
@@ -36,7 +37,11 @@
 
 	.header-content {
 		max-width: 800px;
-		padding: 1rem;
+		padding: 2rem 1rem;
+	}
+
+	.tagline {
+		font-family: 'Oswald', sans-serif;
 	}
 
 	nav {

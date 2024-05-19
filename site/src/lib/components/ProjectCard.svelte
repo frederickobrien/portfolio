@@ -45,18 +45,19 @@
 	}
 	.project-details {
 		flex: 1;
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 	.project-details-content {
 		padding: 0.5rem 1rem;
 	}
 	img {
-		aspect-ratio: 4/3;
+		aspect-ratio: 3/2;
 		height: 100%;
 		border-radius: 7px 0 0 7px;
 	}
 	h3 {
-		font-size: 1.6rem;
+		font-size: 1.4rem;
+		line-height: 1.2;
 	}
 	a {
 		text-decoration: none;

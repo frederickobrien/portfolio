@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Home | Frederick O'Brien</title>
+	<title>Frederick O'Brien</title>
 	<meta name="description" content="Home page" />
 </svelte:head>
 
@@ -21,7 +21,9 @@
 		{#each data as project}
 			<ProjectCard {...project} />
 		{/each}
-		<a href="/projects">See all</a>→
+		<div class="see-more-link">
+			<a href="/projects">See all</a>→
+		</div>
 	</div>
 {/snippet}
 
@@ -34,7 +36,9 @@
 		{#each recentWritings as byline}
 			<BylineCard {...byline} />
 		{/each}
-		<a href="/writings">See all</a>→
+		<div class="see-more-link">
+			<a href="/writings">See all</a>→
+		</div>
 	</div>
 </div>
 
@@ -47,6 +51,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+	}
+	.see-more-link {
+		text-align: center;
+		margin-top: 1rem;
+		font-size: 1.2rem;
 	}
 	@media (min-width: 768px) {
 		.homepage-container {

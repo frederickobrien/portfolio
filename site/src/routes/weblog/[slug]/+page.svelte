@@ -26,4 +26,7 @@
 		line-height: 1.2;
 		margin-bottom: 0.5rem;
 	}
+	.date {
+		margin-bottom: 1rem;
+	}
 </style>

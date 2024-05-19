@@ -29,9 +29,13 @@
 <style>
 	h2 {
 		text-align: center;
+		margin-bottom: 1rem;
 	}
 	.container {
 		max-width: 800px;
 		margin: 0 auto;
+	}
+	li {
+		margin-bottom: 1rem;
 	}
 </style>
