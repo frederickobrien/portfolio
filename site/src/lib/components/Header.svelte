@@ -36,23 +36,24 @@
 
 	.header-content {
 		max-width: 800px;
-		padding: 1em;
+		padding: 1rem;
 	}
 
 	nav {
 		display: flex;
-		gap: 1em;
-		margin-top: 1em;
+		gap: 1rem;
+		margin-top: 1rem;
 	}
 
 	h1 {
-		font-size: 2em;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
 	}
 
 	ul {
 		display: flex;
 		list-style-type: none;
 		padding: 0;
-		column-gap: 1em;
+		column-gap: 1rem;
 	}
 </style>

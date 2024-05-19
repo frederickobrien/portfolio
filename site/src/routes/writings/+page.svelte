@@ -4,8 +4,26 @@
 	const { data } = $props();
 </script>
 
-<h2>Writings</h2>
+<svelte:head>
+	<title>Writings | Frederick O'Brien</title>
+	<meta name="description" content="Just about all the things I've written over the years." />
+</svelte:head>
 
-{#each data.writings as byline}
-	<BylineCard {...byline} />
-{/each}
+<section>
+	<h2>Writings</h2>
+
+	{#each data.writings as byline}
+		<BylineCard {...byline} />
+	{/each}
+</section>
+
+<style>
+	h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	section {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+</style>

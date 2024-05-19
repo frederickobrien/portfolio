@@ -10,6 +10,11 @@
 	const recentWritings: BylineDetails[] = data.writings.slice(0, 10);
 </script>
 
+<svelte:head>
+	<title>Home | Frederick O'Brien</title>
+	<meta name="description" content="Home page" />
+</svelte:head>
+
 {#snippet homepageSection(heading, data)}
 	<div>
 		<h2>{heading}</h2>

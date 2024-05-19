@@ -1,6 +1,11 @@
 <script lang="ts">
-	export let data;
+	const { data } = $props();
 </script>
+
+<svelte:head>
+	<title>{data.title} | Projects & Experiences | Frederick O'Brien</title>
+	<meta name="description" content={data.description} />
+</svelte:head>
 
 <a href="/projects"><h2>Projects & Experiences</h2></a>
 

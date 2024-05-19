@@ -1,18 +1,37 @@
 <script>
-	export let data;
+	const { data } = $props();
 </script>
 
-<h2>Weblog</h2>
+<svelte:head>
+	<title>Weblog | Frederick O'Brien</title>
+	<meta
+		name="description"
+		content="Things what I've written for my website. Likely of little value."
+	/>
+</svelte:head>
 
-<ul>
-	{#each data.posts as post}
-		<li>
-			<h2>
-				<a href={post.path}>
-					{post.meta.title}
-				</a>
-			</h2>
-			{post.meta.date}
-		</li>
-	{/each}
-</ul>
+<div class="container">
+	<h2>Weblog</h2>
+	<ul>
+		{#each data.posts as post}
+			<li>
+				<h3>
+					<a href={post.path}>
+						{post.meta.title}
+					</a>
+				</h3>
+				{post.meta.date}
+			</li>
+		{/each}
+	</ul>
+</div>
+
+<style>
+	h2 {
+		text-align: center;
+	}
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+</style>

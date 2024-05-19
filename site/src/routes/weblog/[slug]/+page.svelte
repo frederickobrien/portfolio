@@ -1,6 +1,11 @@
 <script lang="ts">
-	export let data;
+	const { data } = $props();
 </script>
+
+<svelte:head>
+	<title>{data.title} | Weblog | Frederick O'Brien</title>
+	<meta name="description" content={data.date} />
+</svelte:head>
 
 <a href="/weblog"><h2>Weblog</h2></a>
 

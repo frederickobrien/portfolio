@@ -1,11 +1,29 @@
 <script>
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
-	export let data;
+	const { data } = $props();
 </script>
 
-<h2>Projects & Experiences</h2>
+<svelte:head>
+	<title>Projects & Experiences | Frederick O'Brien</title>
+	<meta name="description" content="Things what I've done." />
+</svelte:head>
 
-{#each data.projects as exploit}
-	<ProjectCard {...exploit} />
-{/each}
+<section>
+	<h2>Projects & Experiences</h2>
+
+	{#each data.projects as exploit}
+		<ProjectCard {...exploit} />
+	{/each}
+</section>
+
+<style>
+	h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	section {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+</style>
