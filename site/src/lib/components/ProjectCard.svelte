@@ -39,7 +39,6 @@
 			opacity: 0.9;
 		}
 		max-width: 800px;
-		max-height: 100px;
 	}
 	.project-image {
 		flex: 1;
