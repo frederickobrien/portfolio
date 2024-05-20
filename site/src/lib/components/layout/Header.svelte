@@ -40,8 +40,13 @@
 		padding: 2rem 1rem;
 	}
 
+	h1 {
+		font-size: 2.2rem;
+	}
+
 	.tagline {
 		font-family: 'Oswald', sans-serif;
+		font-size: 1.2rem;
 	}
 
 	nav {
@@ -50,15 +55,15 @@
 		margin-top: 1rem;
 	}
 
-	h1 {
-		font-size: 2rem;
-		margin-bottom: 0.5rem;
-	}
-
 	ul {
 		display: flex;
 		list-style-type: none;
 		padding: 0;
 		column-gap: 1rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
 	}
 </style>
