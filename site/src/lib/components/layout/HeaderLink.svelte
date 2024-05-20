@@ -17,10 +17,11 @@
 		text-decoration: none;
 		font-weight: bold;
 		color: inherit;
+		font-size: 1.1rem;
 	}
 	a.active {
 		text-decoration: underline;
-		text-decoration-thickness: 2px;
+		text-decoration-thickness: 3px;
 		text-underline-offset: 2px;
 	}
 </style>
