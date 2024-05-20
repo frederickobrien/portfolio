@@ -33,8 +33,9 @@
 		border: 3px solid #323232;
 		color: white;
 		border-radius: 10px;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 		display: flex;
+		flex-direction: column;
 		&:hover {
 			opacity: 0.9;
 		}
@@ -53,7 +54,7 @@
 	img {
 		aspect-ratio: 3/2;
 		width: 100%;
-		border-radius: 7px 0 0 7px;
+		border-radius: 7px 7px 0 0;
 	}
 	h3 {
 		font-size: 1.4rem;

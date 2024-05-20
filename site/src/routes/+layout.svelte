@@ -17,6 +17,6 @@
 <style>
 	main {
 		margin: 1rem auto 0;
-		width: 95%;
+		width: 90%;
 	}
 </style>

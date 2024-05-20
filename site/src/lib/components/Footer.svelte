@@ -24,7 +24,7 @@
 
 <style>
 	footer {
-		margin: 2rem auto;
+		margin: 4rem auto;
 	}
 	ul {
 		display: flex;

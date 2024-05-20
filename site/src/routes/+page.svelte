@@ -7,7 +7,7 @@
 
 	const work = data.projects.filter((item) => item.meta.type === 'work').slice(0, 3);
 	const play = data.projects.filter((item) => item.meta.type === 'play').slice(0, 3);
-	const recentWritings: BylineDetails[] = data.writings.slice(0, 10);
+	const recentWritings: BylineDetails[] = data.writings.slice(0, 15);
 </script>
 
 <svelte:head>
@@ -44,6 +44,7 @@
 
 <style>
 	h2 {
+		font-size: 2rem;
 		text-align: center;
 		margin-bottom: 1rem;
 	}
