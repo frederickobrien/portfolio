@@ -1,7 +1,7 @@
 <script>
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
-	const { data } = $props();
+	export let data;
 </script>
 
 <svelte:head>
