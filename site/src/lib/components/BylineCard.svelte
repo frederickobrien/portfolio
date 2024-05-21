@@ -1,15 +1,9 @@
 <script lang="ts">
-	import type { BylineDetails } from '$lib/types/types';
-
-	const {
-		title,
-		publication,
-		publicationDate,
-		url,
-		archiveUrl,
-		contentType,
-		soleAuthor
-	}: BylineDetails = $props();
+	export let title;
+	export let publication;
+	export let publicationDate;
+	export let url;
+	export let archiveUrl;
 
 	const urlToUse = publication === 'Citizen Obsessed' ? archiveUrl : url;
 </script>

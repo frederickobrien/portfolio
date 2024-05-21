@@ -3,7 +3,7 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import type { BylineDetails } from '$lib/types/types.js';
 
-	const { data } = $props();
+	export let data;
 
 	const work = data.projects.filter((item) => item.meta.type === 'work').slice(0, 3);
 	const play = data.projects.filter((item) => item.meta.type === 'play').slice(0, 3);
@@ -15,21 +15,25 @@
 	<meta name="description" content="Home page" />
 </svelte:head>
 
-{#snippet homepageSection(heading, data)}
+<div class="homepage-container">
 	<div>
-		<h2>{heading}</h2>
-		{#each data as project}
+		<h2>Work</h2>
+		{#each work as project}
 			<ProjectCard {...project} />
 		{/each}
 		<div class="see-more-link">
 			<a href="/projects">See all</a>→
 		</div>
 	</div>
-{/snippet}
-
-<div class="homepage-container">
-	{@render homepageSection('Work', work)}
-	{@render homepageSection('Play', play)}
+	<div>
+		<h2>Play</h2>
+		{#each play as project}
+			<ProjectCard {...project} />
+		{/each}
+		<div class="see-more-link">
+			<a href="/projects">See all</a>→
+		</div>
+	</div>
 	<div>
 		<h2>Writings</h2>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import BylineCard from '$lib/components/BylineCard.svelte';
 
-	const { data } = $props();
+	export let data;
 </script>
 
 <svelte:head>
