@@ -9,8 +9,8 @@ export interface ProjectDetails {
 	role: string;
 	type: 'work' | 'play';
 	link: string;
-	dateStarted: string;
-	dateFinished: string;
+	dateStarted: Date;
+	dateFinished: Date | null;
 	heroImage: string;
 	heroImageAlt: string;
 }

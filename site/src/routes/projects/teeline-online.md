@@ -3,8 +3,8 @@ title: 'teeline.online'
 description: 'A (short)handy site'
 type: 'play'
 link: 'teeline.online'
-dateStarted: '2022-03-12'
-dateFinished: ''
+dateStarted: 2022-03-12
+dateFinished: null
 heroImage: '/images/teeline-online/featured-2.png'
 heroImageAlt: 'Screenshot of outline cards on teeline.online'
 ---

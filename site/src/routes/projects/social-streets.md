@@ -4,8 +4,8 @@ description: 'Hyperlocal journalism'
 role: 'Editorial assistant'
 type: 'work'
 link: 'socialstreets.co'
-dateStarted: '2018-11-08'
-dateFinished: '2019-11-08'
+dateStarted: 2018-11-08
+dateFinished: 2019-11-08
 heroImage: '/images/social-streets/frank-wang.jpg'
 heroImageAlt: 'Photograph of Frank Wang supporter demonstration'
 ---

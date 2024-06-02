@@ -4,8 +4,8 @@ description: 'Data journalism lecturing'
 role: 'Data journalism lecturer'
 type: 'work'
 link: 'newsassociates.co.uk'
-dateStarted: '2023-08-08'
-dateFinished: ''
+dateStarted: 2023-08-08
+dateFinished: 2024-05-24
 heroImage: '/images/news-associates/featured.jpg'
 heroImageAlt: 'Black and white photograph of a chalkboard'
 ---

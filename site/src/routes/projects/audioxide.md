@@ -3,8 +3,8 @@ title: 'Audioxide'
 description: 'The 404th most trusted voice in music'
 type: 'play'
 link: 'audioxide.com'
-dateStarted: '2015-01-10'
-dateFinished: ''
+dateStarted: 2015-01-10
+dateFinished: null
 heroImage: '/images/audioxide/featured-greyscale.jpg'
 heroImageAlt: 'Collage of albums reviewed by Audioxide'
 ---

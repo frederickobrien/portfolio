@@ -4,8 +4,8 @@ description: 'Gonzo engineering'
 role: 'Software engineer'
 type: 'work'
 link: 'theguardian.com'
-dateStarted: '2021-04-07'
-dateFinished: ''
+dateStarted: 2021-04-07
+dateFinished: null
 heroImage: '/images/the-guardian/ascii-guardian-logo.png'
 heroImageAlt: 'Guardian logo made up of 0s and dots'
 ---

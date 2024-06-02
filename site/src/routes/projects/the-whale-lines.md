@@ -3,8 +3,8 @@ title: 'The Whale-Lines'
 description: 'Real fake news'
 type: 'play'
 link: 'thewhalelines.com'
-dateStarted: '2020-03-12'
-dateFinished: ''
+dateStarted: 2020-03-12
+dateFinished: null
 heroImage: '/images/the-whale-lines/site-featured.jpg'
 heroImageAlt: 'Black and white photograph of old newspapers strewn across the floor'
 ---
