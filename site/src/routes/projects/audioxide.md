@@ -3,13 +3,13 @@ title: 'Audioxide'
 description: 'The 404th most trusted voice in music'
 type: 'play'
 link: 'audioxide.com'
-dateStarted: '2015-01-10'
-dateFinished: ''
+dateStarted: 2015-01-10
+dateFinished: null
 heroImage: '/images/audioxide/featured-greyscale.jpg'
 heroImageAlt: 'Collage of albums reviewed by Audioxide'
 ---
 
-_Audioxide_ is a music webzine that I and two friends - [André Dack](https://twitter.com/AndreDack) and [Andrew Bridge](https://www.andrewhbridge.co.uk/) - have run since 2015. It was born out of a hobby. The three of us listen to an album over the course of a week then spending an evening talking about it. We'd round up with a little summary of our thoughts, up to three favourite tracks, and a score out of ten.
+[_Audioxide_](https://audioxide.com) is a music webzine that I and two friends - [André Dack](https://twitter.com/AndreDack) and [Andrew Bridge](https://www.andrewhbridge.co.uk/) - have run since 2015. It was born out of a hobby. The three of us listen to an album over the course of a week then spending an evening talking about it. We'd round up with a little summary of our thoughts, up to three favourite tracks, and a score out of ten.
 
 Over time we figured we may as well publish these summaries somewhere, and so _Audioxide_ was born. Our core shtick remains listening to albums together and publishing our thoughts as reviews, though we also dabble in articles, interviews and other oddities. We have our lulls and purple patches, but the site's still going strong.
 

@@ -4,8 +4,8 @@ description: 'World wide writing'
 role: 'Soft skills and professional development editor'
 type: 'work'
 link: 'smashingmagazine.com'
-dateStarted: '2019-11-08'
-dateFinished: ''
+dateStarted: 2019-11-08
+dateFinished: null
 heroImage: '/images/smashing-magazine/featured-oil.jpg'
 heroImageAlt: 'Sketch of web design layout'
 ---

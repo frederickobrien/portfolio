@@ -1,4 +1,4 @@
-import type { ExploitDetails } from '$lib/types/types.js';
+import type { ProjectDetails } from '$lib/types/types.js';
 
 export async function load({ params }) {
 	const post = await import(`../${params.slug}.md`);
@@ -12,7 +12,7 @@ export async function load({ params }) {
 		dateFinished,
 		heroImage,
 		heroImageAlt
-	}: ExploitDetails = post.metadata;
+	}: ProjectDetails = post.metadata;
 	const content = post.default;
 
 	return {

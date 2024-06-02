@@ -24,10 +24,13 @@ h4,
 h5,
 h6 {
 	font-family: 'Oswald', sans-serif;
+	margin-bottom: 1rem;
 }
 
 img {
 	max-width: 100%;
+	display: block;
+	margin: 0 auto;
 }
 
 article {

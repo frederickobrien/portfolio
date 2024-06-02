@@ -12,8 +12,8 @@
 <section>
 	<h2>Projects & Experiences</h2>
 
-	{#each data.projects as exploit}
-		<ProjectCard {...exploit} />
+	{#each data.projects as project}
+		<ProjectCard {...project} />
 	{/each}
 </section>
 
