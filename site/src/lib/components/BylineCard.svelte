@@ -4,6 +4,8 @@
 	export let publicationDate;
 	export let url;
 	export let archiveUrl;
+	export let contentType;
+	export let soleAuthor;
 
 	const urlToUse = publication === 'Citizen Obsessed' ? archiveUrl : url;
 </script>
