@@ -54,6 +54,7 @@
 	h3 {
 		font-size: 1.4rem;
 		line-height: 1.2;
+		margin-bottom: 0rem;
 	}
 	a {
 		text-decoration: none;

@@ -42,6 +42,7 @@
 
 	h1 {
 		font-size: 2.2rem;
+		margin-bottom: 0;
 	}
 
 	.tagline {
