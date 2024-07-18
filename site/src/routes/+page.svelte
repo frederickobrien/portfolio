@@ -1,7 +1,9 @@
 <script lang="ts">
 	import BylineCard from '$lib/components/BylineCard.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import Scene from '$lib/components/Scene.svelte';
 	import type { BylineDetails } from '$lib/types/types.js';
+	import { Canvas } from '@threlte/core';
 
 	export let data;
 
@@ -14,6 +16,12 @@
 	<title>Frederick O'Brien</title>
 	<meta name="description" content="Home page" />
 </svelte:head>
+
+<div class="scene-container">
+	<Canvas>
+		<Scene />
+	</Canvas>
+</div>
 
 <div class="homepage-container">
 	<div>
@@ -61,6 +69,13 @@
 		text-align: center;
 		margin-top: 1rem;
 		font-size: 1.2rem;
+	}
+	.scene-container {
+		width: 100%;
+		height: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	@media (min-width: 768px) {
 		.homepage-container {
