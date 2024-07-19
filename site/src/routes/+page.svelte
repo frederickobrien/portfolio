@@ -1,7 +1,7 @@
 <script lang="ts">
 	import BylineCard from '$lib/components/BylineCard.svelte';
+	import Model from '$lib/components/models/Model.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import Scene from '$lib/components/Scene.svelte';
 	import type { BylineDetails } from '$lib/types/types.js';
 	import { Canvas } from '@threlte/core';
 
@@ -16,7 +16,7 @@
 
 <div class="scene-container">
 	<Canvas>
-		<Scene />
+		<Model url="/models/typewriter/scene.gltf" />
 	</Canvas>
 </div>
 
@@ -46,7 +46,6 @@
 	</div>
 	<div>
 		<h2>Writings</h2>
-
 		{#each recentWritings as byline}
 			<BylineCard
 				title={byline.title}
