@@ -32,5 +32,11 @@
 		"vite": "^5.0.3",
 		"vitest": "^1.2.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@threlte/core": "^7.3.1",
+		"@threlte/extras": "^8.11.4",
+		"@threlte/gltf": "^2.0.3",
+		"three": "^0.166.1"
+	}
 }
