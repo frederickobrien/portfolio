@@ -1,6 +1,6 @@
 ---
 title: 'News Associates'
-description: 'Data journalism lecturing'
+description: 'Data journalism 101'
 role: 'Data journalism lecturer'
 type: 'work'
 link: 'newsassociates.co.uk'

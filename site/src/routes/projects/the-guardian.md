@@ -1,6 +1,6 @@
 ---
 title: 'The Guardian'
-description: 'Gonzo engineering'
+description: 'Hacking for hacks'
 role: 'Software engineer'
 type: 'work'
 link: 'theguardian.com'

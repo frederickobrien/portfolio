@@ -1,7 +1,16 @@
-<script>
+<script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import type { ProjectDetails } from '$lib/types/types';
 
-	export let data;
+	export let data: {
+		projects: {
+			meta: ProjectDetails;
+			path: string;
+		}[];
+	};
+
+	$: activeFilter = 'all';
+	$: displayedProjects = data.projects;
 </script>
 
 <svelte:head>
@@ -12,19 +21,79 @@
 <section>
 	<h2>Projects & Experiences</h2>
 
-	{#each data.projects as project}
-		<ProjectCard {...project} />
-	{/each}
+	<div class="filters-container">
+		<div
+			class={`filter-button ${activeFilter === 'all' ? 'active' : ''}`}
+			on:click={() => {
+				displayedProjects = data.projects;
+				activeFilter = 'all';
+			}}
+		>
+			All
+		</div>
+		<div
+			class={`filter-button ${activeFilter === 'work' ? 'active' : ''}`}
+			on:click={() => {
+				displayedProjects = data.projects.filter((project) => project.meta.type === 'work');
+				activeFilter = 'work';
+			}}
+		>
+			Work
+		</div>
+		<div
+			class={`filter-button ${activeFilter === 'play' ? 'active' : ''}`}
+			on:click={() => {
+				displayedProjects = data.projects.filter((project) => project.meta.type === 'play');
+				activeFilter = 'play';
+			}}
+		>
+			Play
+		</div>
+	</div>
+	<div class="projects-container">
+		{#each displayedProjects as project}
+			<ProjectCard {...project} />
+		{/each}
+	</div>
 </section>
 
 <style>
 	h2 {
 		font-size: 2rem;
 		text-align: center;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 	}
 	section {
 		max-width: 800px;
 		margin: 0 auto;
+	}
+	.projects-container {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.filters-container {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 2rem;
+		justify-content: center;
+	}
+	.filter-button {
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+	.active {
+		background-color: #000;
+		color: #fff;
+	}
+	@media (min-width: 768px) {
+		.projects-container {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 1rem;
+		}
 	}
 </style>

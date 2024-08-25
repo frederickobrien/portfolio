@@ -1,6 +1,6 @@
 ---
 title: 'Social Streets'
-description: 'Hyperlocal journalism'
+description: 'Pounding pavements'
 role: 'Editorial assistant'
 type: 'work'
 link: 'socialstreets.co'

@@ -1,6 +1,6 @@
 ---
 title: 'Audioxide'
-description: 'The 404th most trusted voice in music'
+description: 'Webzining'
 type: 'play'
 link: 'audioxide.com'
 dateStarted: 2015-01-10

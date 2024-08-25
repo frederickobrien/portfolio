@@ -4,9 +4,6 @@
 	import type { BylineDetails } from '$lib/types/types.js';
 
 	export let data;
-
-	const work = data.projects.filter((item) => item.meta.type === 'work').slice(0, 3);
-	const play = data.projects.filter((item) => item.meta.type === 'play').slice(0, 3);
 	const recentWritings: BylineDetails[] = data.writings.slice(0, 15);
 </script>
 
@@ -18,18 +15,23 @@
 <div class="homepage-container">
 	<div>
 		<h2>Work</h2>
-		{#each work as project}
-			<ProjectCard {...project} />
-		{/each}
+		<div class="project-list">
+			{#each data.highlightedWorkProjects as project}
+				<ProjectCard {...project} />
+			{/each}
+		</div>
+
 		<div class="see-more-link">
 			<a href="/projects">See all</a>→
 		</div>
 	</div>
 	<div>
 		<h2>Play</h2>
-		{#each play as project}
-			<ProjectCard {...project} />
-		{/each}
+		<div class="project-list">
+			{#each data.highlightedPlayProjects as project}
+				<ProjectCard {...project} />
+			{/each}
+		</div>
 		<div class="see-more-link">
 			<a href="/projects">See all</a>→
 		</div>
@@ -61,6 +63,10 @@
 		text-align: center;
 		margin-top: 1rem;
 		font-size: 1.2rem;
+	}
+	.project-list {
+		display: grid;
+		gap: 2rem;
 	}
 	@media (min-width: 768px) {
 		.homepage-container {

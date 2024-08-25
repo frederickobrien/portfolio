@@ -16,7 +16,7 @@
 		<div class="project-details">
 			<div class="project-details-content">
 				<h3>{meta.title}</h3>
-				<div>{meta.description}</div>
+				<div class="description">{meta.description}</div>
 			</div>
 		</div>
 	</div>
@@ -25,12 +25,10 @@
 <style>
 	.project-card {
 		background-color: #323232;
-		border: 3px solid #323232;
 		color: white;
-		border-radius: 10px;
-		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 		&:hover {
 			opacity: 0.9;
 		}
@@ -42,6 +40,7 @@
 	.project-details {
 		flex: 1;
 		font-size: 1rem;
+		padding: 1rem 0;
 	}
 	.project-details-content {
 		padding: 0.5rem 1rem;
@@ -49,12 +48,15 @@
 	img {
 		aspect-ratio: 3/2;
 		width: 100%;
-		border-radius: 7px 7px 0 0;
+		filter: grayscale(100%);
 	}
 	h3 {
-		font-size: 1.4rem;
+		font-size: 1rem;
 		line-height: 1.2;
 		margin-bottom: 0rem;
+	}
+	.description {
+		font-size: 0.9rem;
 	}
 	a {
 		text-decoration: none;

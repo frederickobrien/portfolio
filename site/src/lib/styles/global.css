@@ -47,3 +47,13 @@ blockquote {
 		margin: 0 0 0.5rem 0;
 	}
 }
+
+ul,
+ol {
+	margin: 0 0 1rem 2rem;
+}
+
+li {
+	margin-bottom: 0.5rem;
+	font-size: var(--regular-font-size);
+}

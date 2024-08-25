@@ -5,9 +5,9 @@
 	const tagline = taglines[Math.floor(Math.random() * taglines.length)];
 
 	const navSections = [
-		{ title: 'About', href: '/about' },
 		{ title: 'Projects & Experiences', href: '/projects' },
-		{ title: 'Writings', href: '/writings' }
+		{ title: 'Writings', href: '/writings' },
+		{ title: 'About', href: '/about' }
 	];
 </script>
 
@@ -60,7 +60,12 @@
 		display: flex;
 		list-style-type: none;
 		padding: 0;
+		margin: 0;
 		column-gap: 1rem;
+	}
+
+	li {
+		margin: 0;
 	}
 
 	a {

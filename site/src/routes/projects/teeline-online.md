@@ -1,6 +1,6 @@
 ---
 title: 'teeline.online'
-description: 'A (short)handy site'
+description: 'Very (short)handy'
 type: 'play'
 link: 'teeline.online'
 dateStarted: 2022-03-12
