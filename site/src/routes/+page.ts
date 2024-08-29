@@ -1,7 +1,7 @@
 import type { ProjectDetails } from '$lib/types/types.js';
 
 const workProjectsToHighlight = ['The Guardian', 'News Associates', 'Social Streets'];
-const playProjectsToHighlight = ['teeline.online', 'Audioxide', 'The Whale-Lines'];
+const playProjectsToHighlight = ['Gonzo Engineering', 'Audioxide', 'The Whale-Lines'];
 
 export const load = async ({ fetch }) => {
 	// Projects
