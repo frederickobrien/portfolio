@@ -1,5 +1,5 @@
 ---
-title: The web is decadent and depraved
+title: "The web is decadent and depraved: a case for gonzo engineering"
 date: '2024-09-30'
 ---
 
