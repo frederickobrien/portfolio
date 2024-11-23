@@ -16,5 +16,6 @@ Authors whose works I've narrated include:
 
 - Victor Hugo
 - Anton Chekhov
+- Jack London
 
 Visit [my LibriVox profile](https://librivox.org/reader/11948) to see all the contributions I've made over the years and - god help you - have a listen.

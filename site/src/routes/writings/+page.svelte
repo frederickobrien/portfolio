@@ -21,32 +21,63 @@
 	<div class="filters-container">
 		<div
 			class={`filter-button ${chosenContentType === 'all' ? 'active' : ''}`}
+			role="button"
+			tabindex="0"
 			on:click={() => {
+				displayedWritings = data.writings;
+				chosenContentType = 'all';
+			}}
+			on:keydown={() => {
 				displayedWritings = data.writings;
 				chosenContentType = 'all';
 			}}
 		>
 			All
 		</div>
-
 		<div
 			class={`filter-button ${chosenContentType === 'news' ? 'active' : ''}`}
+			role="button"
+			tabindex="0"
 			on:click={() => {
+				displayedWritings = data.writings.filter((writing) => writing.contentType === 'news');
+				chosenContentType = 'news';
+			}}
+			on:keydown={() => {
 				displayedWritings = data.writings.filter((writing) => writing.contentType === 'news');
 				chosenContentType = 'news';
 			}}
 		>
 			News
 		</div>
-
 		<div
 			class={`filter-button ${chosenContentType === 'feature' ? 'active' : ''}`}
+			role="button"
+			tabindex="0"
 			on:click={() => {
+				displayedWritings = data.writings.filter((writing) => writing.contentType === 'feature');
+				chosenContentType = 'feature';
+			}}
+			on:keydown={() => {
 				displayedWritings = data.writings.filter((writing) => writing.contentType === 'feature');
 				chosenContentType = 'feature';
 			}}
 		>
 			Features
+		</div>
+		<div
+			class={`filter-button ${chosenContentType === 'satire' ? 'active' : ''}`}
+			role="button"
+			tabindex="0"
+			on:click={() => {
+				displayedWritings = data.writings.filter((writing) => writing.contentType === 'satire');
+				chosenContentType = 'satire';
+			}}
+			on:keydown={() => {
+				displayedWritings = data.writings.filter((writing) => writing.contentType === 'satire');
+				chosenContentType = 'satire';
+			}}
+		>
+			Satire
 		</div>
 	</div>
 

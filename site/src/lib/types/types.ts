@@ -21,6 +21,6 @@ export interface BylineDetails {
 	publicationDate: string;
 	url: string;
 	archiveUrl: string;
-	contentType: 'news' | 'feature';
+	contentType: 'news' | 'feature' | 'satire';
 	soleAuthor: boolean;
 }
