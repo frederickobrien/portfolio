@@ -2,12 +2,22 @@
 	import BylineCard from '$lib/components/BylineCard.svelte';
 	import type { BylineDetails } from '$lib/types/types';
 
-	export let data: {
-		writings: BylineDetails[];
+	let { data } = $props();
+
+	const filterByContentType = (writings: BylineDetails[] = [], contentType: string) => {
+		if (contentType === 'all') return writings;
+		else return writings.filter((writing) => writing.contentType === contentType);
 	};
 
-	$: chosenContentType = 'all';
-	$: displayedWritings = data.writings;
+	let chosenContentType: string = $state('all');
+	let displayedWritings = $derived(filterByContentType(data.writings, chosenContentType));
+
+	const filterButtons = [
+		{ name: 'all', label: 'All' },
+		{ name: 'news', label: 'News' },
+		{ name: 'feature', label: 'Features' },
+		{ name: 'satire', label: 'Satire' }
+	];
 </script>
 
 <svelte:head>
@@ -19,66 +29,17 @@
 	<h2>Writings</h2>
 
 	<div class="filters-container">
-		<div
-			class={`filter-button ${chosenContentType === 'all' ? 'active' : ''}`}
-			role="button"
-			tabindex="0"
-			on:click={() => {
-				displayedWritings = data.writings;
-				chosenContentType = 'all';
-			}}
-			on:keydown={() => {
-				displayedWritings = data.writings;
-				chosenContentType = 'all';
-			}}
-		>
-			All
-		</div>
-		<div
-			class={`filter-button ${chosenContentType === 'news' ? 'active' : ''}`}
-			role="button"
-			tabindex="0"
-			on:click={() => {
-				displayedWritings = data.writings.filter((writing) => writing.contentType === 'news');
-				chosenContentType = 'news';
-			}}
-			on:keydown={() => {
-				displayedWritings = data.writings.filter((writing) => writing.contentType === 'news');
-				chosenContentType = 'news';
-			}}
-		>
-			News
-		</div>
-		<div
-			class={`filter-button ${chosenContentType === 'feature' ? 'active' : ''}`}
-			role="button"
-			tabindex="0"
-			on:click={() => {
-				displayedWritings = data.writings.filter((writing) => writing.contentType === 'feature');
-				chosenContentType = 'feature';
-			}}
-			on:keydown={() => {
-				displayedWritings = data.writings.filter((writing) => writing.contentType === 'feature');
-				chosenContentType = 'feature';
-			}}
-		>
-			Features
-		</div>
-		<div
-			class={`filter-button ${chosenContentType === 'satire' ? 'active' : ''}`}
-			role="button"
-			tabindex="0"
-			on:click={() => {
-				displayedWritings = data.writings.filter((writing) => writing.contentType === 'satire');
-				chosenContentType = 'satire';
-			}}
-			on:keydown={() => {
-				displayedWritings = data.writings.filter((writing) => writing.contentType === 'satire');
-				chosenContentType = 'satire';
-			}}
-		>
-			Satire
-		</div>
+		{#each filterButtons as button}
+			<div
+				class={`filter-button ${chosenContentType === button.name ? 'active' : ''}`}
+				role="button"
+				tabindex="0"
+				onclick={() => (chosenContentType = button.name)}
+				onkeydown={() => (chosenContentType = button.name)}
+			>
+				{button.label}
+			</div>
+		{/each}
 	</div>
 
 	{#each displayedWritings as byline}

@@ -15,12 +15,14 @@ export interface ProjectDetails {
 	heroImageAlt: string;
 }
 
+type ContentType = 'news' | 'feature' | 'satire';
+
 export interface BylineDetails {
 	title: string;
 	publication: string;
 	publicationDate: string;
 	url: string;
 	archiveUrl: string;
-	contentType: 'news' | 'feature' | 'satire';
+	contentType: ContentType;
 	soleAuthor: boolean;
 }
