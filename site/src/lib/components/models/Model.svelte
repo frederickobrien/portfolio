@@ -5,8 +5,13 @@
 	export let url: string;
 </script>
 
-<T.PerspectiveCamera makeDefault position={[3, 3, 5]} fov={7}>
+<T.PerspectiveCamera makeDefault position={[30, 3, 5]} fov={7}>
 	<OrbitControls autoRotate enableDamping />
 </T.PerspectiveCamera>
 <T.AmbientLight />
-<GLTF {url} />
+<!-- <GLTF {url} /> -->
+
+<T.Mesh>
+	<T.SphereGeometry args={[1, 16, 16]} />
+	<T.MeshBasicMaterial wireframe />
+</T.Mesh>
