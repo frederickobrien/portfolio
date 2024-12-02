@@ -9,10 +9,10 @@
 		return allWritings.filter((writing) => writing.contentType === type);
 	};
 
-	// const getTypeCount = (type: string) => {
-	// 	if (type === 'all') return data.writings.length;
-	// 	return data.writings.filter((writing) => writing.contentType === type).length;
-	// };
+	const getTypeCount = (type: string) => {
+		if (type === 'all') return data.writings.length;
+		return data.writings.filter((writing) => writing.contentType === type).length;
+	};
 
 	let chosenContentType: string = $state('all');
 	let displayedWritings = $derived(filterByContentType(chosenContentType, data.writings));
@@ -43,7 +43,7 @@
 				onclick={() => (chosenContentType = type.name)}
 				onkeydown={() => (chosenContentType = type.name)}
 			>
-				{type.label}
+				{type.label} ({getTypeCount(type.name)})
 			</div>
 		{/each}
 	</div>
@@ -71,6 +71,7 @@
 	}
 	.filters-container {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.5rem;
 		margin-bottom: 1rem;
 		justify-content: center;

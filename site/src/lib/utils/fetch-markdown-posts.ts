@@ -22,7 +22,7 @@ export const fetchWeblogPosts = async () => {
 };
 
 export const fetchProjectPosts = async () => {
-	const allPostFiles = import.meta.glob('/src/routes/projects/*.md');
+	const allPostFiles = import.meta.glob('/src/routes/projects-and-experiences/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(

@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="see-more-link">
-			<a href="/projects">See all</a>→
+			<a href="/projects-and-experiences">See all</a>→
 		</div>
 	</div>
 	<div>
@@ -33,7 +33,7 @@
 			{/each}
 		</div>
 		<div class="see-more-link">
-			<a href="/projects">See all</a>→
+			<a href="/projects-and-experiences">See all</a>→
 		</div>
 	</div>
 	<div>

@@ -1,11 +1,11 @@
 import type { ProjectDetails } from '$lib/types/types.js';
 
-const workProjectsToHighlight = ['The Guardian', 'News Associates', 'Social Streets'];
+const workProjectsToHighlight = ['The Guardian', 'Smashing Magazine', 'Social Streets'];
 const playProjectsToHighlight = ['Gonzo Engineering', 'Audioxide', 'The Whale-Lines'];
 
 export const load = async ({ fetch }) => {
 	// Projects
-	const projectsResponse = await fetch(`/api/projects`);
+	const projectsResponse = await fetch(`/api/projects-and-experiences`);
 	const allProjects: {
 		meta: ProjectDetails;
 		path: string;
