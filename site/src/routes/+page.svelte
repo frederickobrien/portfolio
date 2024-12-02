@@ -1,7 +1,9 @@
 <script lang="ts">
 	import BylineCard from '$lib/components/BylineCard.svelte';
+	import Model from '$lib/components/models/Model.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import type { BylineDetails } from '$lib/types/types.js';
+	import { Canvas } from '@threlte/core';
 
 	let { data } = $props();
 	const recentWritings: BylineDetails[] = data.writings.slice(0, 15);
@@ -11,6 +13,12 @@
 	<title>Frederick O'Brien</title>
 	<meta name="description" content="Home page" />
 </svelte:head>
+
+<div class="scene-container">
+	<Canvas>
+		<Model url="/models/typewriter/scene.gltf" />
+	</Canvas>
+</div>
 
 <div class="homepage-container">
 	<div>
@@ -38,7 +46,6 @@
 	</div>
 	<div>
 		<h2>Writings</h2>
-
 		{#each recentWritings as byline}
 			<BylineCard
 				title={byline.title}
@@ -73,6 +80,13 @@
 	.project-list {
 		display: grid;
 		gap: 2rem;
+	}
+	.scene-container {
+		width: 100%;
+		height: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	@media (min-width: 768px) {
 		.homepage-container {
