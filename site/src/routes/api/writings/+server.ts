@@ -18,8 +18,10 @@ export const GET = async () => {
 		};
 	});
 
+	const typedBylines: BylineDetails[] = bylines;
+
 	const combinedAndSortedWritings: BylineDetails[] = formattedWeblogPosts
-		.concat(bylines)
+		.concat(typedBylines)
 		.sort((a, b) => Number(new Date(b.publicationDate)) - Number(new Date(a.publicationDate)));
 
 	return json(combinedAndSortedWritings);

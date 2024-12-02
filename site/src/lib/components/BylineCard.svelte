@@ -1,17 +1,23 @@
 <script lang="ts">
-	export let title;
-	export let publication;
-	export let publicationDate;
-	export let url;
-	export let archiveUrl;
-	export let contentType;
-	export let soleAuthor;
+	const {
+		title,
+		publication,
+		publicationDate,
+		url,
+		archiveUrl
+	}: {
+		title: string;
+		publication: string;
+		publicationDate: string;
+		url: string;
+		archiveUrl: string;
+	} = $props();
 
-	const urlToUse = publication === 'Citizen Obsessed' ? archiveUrl : url;
+	// const urlToUse = publication === 'Citizen Obsessed' ? archiveUrl : url;
 </script>
 
 <div class="byline-card">
-	<a href={urlToUse}><h4>{title}</h4></a>
+	<a href={url}><h4>{title}</h4></a>
 	{#if publication === 'Weblog'}
 		<a href={`/weblog`}>{publication}</a>
 	{:else}
@@ -26,5 +32,6 @@
 	h4 {
 		font-size: 1.5rem;
 		margin-bottom: 0.3rem;
+		line-height: 1.2;
 	}
 </style>
