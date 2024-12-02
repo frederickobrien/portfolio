@@ -57,3 +57,7 @@ li {
 	margin-bottom: 0.5rem;
 	font-size: var(--regular-font-size);
 }
+
+a {
+	color: #0000ee;
+}
