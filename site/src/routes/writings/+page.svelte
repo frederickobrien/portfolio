@@ -4,19 +4,25 @@
 
 	let { data } = $props();
 
-	const filterByContentType = (writings: BylineDetails[] = [], contentType: string) => {
-		if (contentType === 'all') return writings;
-		else return writings.filter((writing) => writing.contentType === contentType);
+	const filterByContentType = (type: string, allWritings: BylineDetails[]) => {
+		if (type === 'all') return allWritings;
+		return allWritings.filter((writing) => writing.contentType === type);
 	};
 
-	let chosenContentType: string = $state('all');
-	let displayedWritings = $derived(filterByContentType(data.writings, chosenContentType));
+	// const getTypeCount = (type: string) => {
+	// 	if (type === 'all') return data.writings.length;
+	// 	return data.writings.filter((writing) => writing.contentType === type).length;
+	// };
 
-	const filterButtons = [
+	let chosenContentType: string = $state('all');
+	let displayedWritings = $derived(filterByContentType(chosenContentType, data.writings));
+
+	const writingTypes = [
 		{ name: 'all', label: 'All' },
 		{ name: 'news', label: 'News' },
 		{ name: 'feature', label: 'Features' },
-		{ name: 'satire', label: 'Satire' }
+		{ name: 'satire', label: 'Satire' },
+		{ name: 'weblog', label: 'Weblog' }
 	];
 </script>
 
@@ -29,21 +35,27 @@
 	<h2>Writings</h2>
 
 	<div class="filters-container">
-		{#each filterButtons as button}
+		{#each writingTypes as type}
 			<div
-				class={`filter-button ${chosenContentType === button.name ? 'active' : ''}`}
+				class={`filter-button ${chosenContentType === type.name ? 'active' : ''}`}
 				role="button"
 				tabindex="0"
-				onclick={() => (chosenContentType = button.name)}
-				onkeydown={() => (chosenContentType = button.name)}
+				onclick={() => (chosenContentType = type.name)}
+				onkeydown={() => (chosenContentType = type.name)}
 			>
-				{button.label}
+				{type.label}
 			</div>
 		{/each}
 	</div>
 
 	{#each displayedWritings as byline}
-		<BylineCard {...byline} />
+		<BylineCard
+			title={byline.title}
+			publication={byline.publication}
+			publicationDate={byline.publicationDate}
+			url={byline.url}
+			archiveUrl={byline.archiveUrl}
+		/>
 	{/each}
 </section>
 

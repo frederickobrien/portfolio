@@ -3,7 +3,7 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import type { BylineDetails } from '$lib/types/types.js';
 
-	export let data;
+	let { data } = $props();
 	const recentWritings: BylineDetails[] = data.writings.slice(0, 15);
 </script>
 
@@ -40,7 +40,13 @@
 		<h2>Writings</h2>
 
 		{#each recentWritings as byline}
-			<BylineCard {...byline} />
+			<BylineCard
+				title={byline.title}
+				publication={byline.publication}
+				publicationDate={byline.publicationDate}
+				url={byline.url}
+				archiveUrl={byline.archiveUrl}
+			/>
 		{/each}
 		<div class="see-more-link">
 			<a href="/writings">See all</a>→

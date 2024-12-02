@@ -1,16 +1,19 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import type { ProjectDetails } from '$lib/types/types';
+	import type { ProjectObject } from '$lib/types/types.js';
 
-	export let data: {
-		projects: {
-			meta: ProjectDetails;
-			path: string;
-		}[];
+	let { data } = $props();
+
+	let activeFilter = $state('all');
+
+	const filterDisplayedProjects = (type: string, allProjects: ProjectObject[]) => {
+		if (type === 'all') return allProjects;
+		return allProjects.filter((project: ProjectObject) => project.meta.type === type);
 	};
 
-	$: activeFilter = 'all';
-	$: displayedProjects = data.projects;
+	let displayedProjects = $derived(filterDisplayedProjects(activeFilter, data.projects));
+
+	const filters = ['all', 'work', 'play'];
 </script>
 
 <svelte:head>
@@ -22,34 +25,19 @@
 	<h2>Projects & Experiences</h2>
 
 	<div class="filters-container">
-		<div
-			class={`filter-button ${activeFilter === 'all' ? 'active' : ''}`}
-			on:click={() => {
-				displayedProjects = data.projects;
-				activeFilter = 'all';
-			}}
-		>
-			All
-		</div>
-		<div
-			class={`filter-button ${activeFilter === 'work' ? 'active' : ''}`}
-			on:click={() => {
-				displayedProjects = data.projects.filter((project) => project.meta.type === 'work');
-				activeFilter = 'work';
-			}}
-		>
-			Work
-		</div>
-		<div
-			class={`filter-button ${activeFilter === 'play' ? 'active' : ''}`}
-			on:click={() => {
-				displayedProjects = data.projects.filter((project) => project.meta.type === 'play');
-				activeFilter = 'play';
-			}}
-		>
-			Play
-		</div>
+		{#each filters as filter}
+			<div
+				class={`filter-button ${activeFilter === filter ? 'active' : ''}`}
+				role="button"
+				tabindex="0"
+				onclick={() => (activeFilter = filter)}
+				onkeydown={() => (activeFilter = filter)}
+			>
+				{filter.charAt(0).toUpperCase() + filter.slice(1)}
+			</div>
+		{/each}
 	</div>
+
 	<div class="projects-container">
 		{#each displayedProjects as project}
 			<ProjectCard {...project} />

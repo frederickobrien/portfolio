@@ -1,11 +1,16 @@
 <script lang="ts">
-	export let meta: {
-		title: string;
-		description: string;
-		heroImage: string;
-		heroImageAlt: string;
-	};
-	export let path: string;
+	let {
+		meta,
+		path
+	}: {
+		meta: {
+			title: string;
+			description: string;
+			heroImage: string;
+			heroImageAlt: string;
+		};
+		path: string;
+	} = $props();
 </script>
 
 <a href={path}>

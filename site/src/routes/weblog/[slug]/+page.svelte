@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -12,7 +12,7 @@
 <article>
 	<h3>{data.title}</h3>
 	<div class="date"><time datetime={data.date}>{data.date}</time></div>
-	<svelte:component this={data.content} />
+	<data.content />
 </article>
 
 <style>
