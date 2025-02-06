@@ -21,4 +21,4 @@ I think there are a lot more gaps waiting to be filled with tools that can suppo
 
 Carl Sagan wrote that scientists should been keen students of moral philosophy. So too should engineers, I think. Gonzo engineering has some kind of moral compass, if only a sense of outrage. Amoral technology is sick technology. Make earnest things in earnest ways that treat 'users' like human beings rather than data points or credit cards. That is the work, and it is good work.
 
-The way things are isn’t the way they have to be, and the surest way for nothing to change is to do nothing. 
+The way things are isn’t the way they have to be, and the surest way for nothing to change is to do nothing.
