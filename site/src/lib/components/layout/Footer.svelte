@@ -1,5 +1,5 @@
 <script>
-	import details from '../../data/details.json';
+	import details from '../../../data/details.json';
 </script>
 
 <footer>
@@ -15,8 +15,8 @@
 			>
 		</li>
 		<li>
-			<a href={`https://twitter.com/${details.socialMediaHandles.twitter}`}
-				><img src="/images/x-icon.png" alt="X icon" /></a
+			<a href={`https://bsky.app/profile/${details.socialMediaHandles.bluesky}`}
+				><img src="/images/bluesky-icon.png" alt="Bluesky icon" /></a
 			>
 		</li>
 	</ul>
