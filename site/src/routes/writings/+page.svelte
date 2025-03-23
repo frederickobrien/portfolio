@@ -22,6 +22,7 @@
 		{ name: 'news', label: 'News' },
 		{ name: 'feature', label: 'Features' },
 		{ name: 'satire', label: 'Satire' },
+		{ name: 'fiction', label: 'Fiction' },
 		{ name: 'weblog', label: 'Weblog' }
 	];
 </script>
