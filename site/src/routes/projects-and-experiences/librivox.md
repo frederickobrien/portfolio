@@ -3,7 +3,6 @@ title: 'LibriVox'
 description: 'Not so velvety tones'
 role: 'Voice actor'
 type: 'play'
-link: 'https://librivox.org/reader/11948'
 dateStarted: 2018-01-05
 dateFinished: null
 heroImage: '/images/librivox/mic.jpg'

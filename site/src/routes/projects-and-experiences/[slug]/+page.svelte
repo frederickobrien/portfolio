@@ -2,6 +2,8 @@
 	import { stringifyDateRange } from '$lib/utils/prettifiers.js';
 
 	let { data } = $props();
+
+	const hrefLink = (link: string) => `https://${link}`;
 </script>
 
 <svelte:head>
@@ -11,6 +13,11 @@
 
 <article>
 	<h2>{data.title}</h2>
+	{#if data.link}
+		<div class="link">
+			<a href={hrefLink(data.link)} target="_blank" rel="noopener noreferrer">{data.link}</a>
+		</div>
+	{/if}
 	<div class="time-range">{stringifyDateRange(data.dateStarted, data.dateFinished)}</div>
 	<data.content />
 </article>
@@ -21,8 +28,13 @@
 		text-align: center;
 		margin-bottom: 1rem;
 	}
-	.time-range {
+	.time-range,
+	.link {
 		text-align: center;
 		margin-bottom: 1rem;
+	}
+	.link {
+		font-size: 1.2rem;
+		font-weight: bold;
 	}
 </style>

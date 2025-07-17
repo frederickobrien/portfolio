@@ -3,7 +3,6 @@ title: 'News Associates'
 description: 'Data journalism 101'
 role: 'Data journalism lecturer'
 type: 'work'
-link: 'newsassociates.co.uk'
 dateStarted: 2023-08-08
 dateFinished: 2024-05-24
 heroImage: '/images/news-associates/featured.jpg'

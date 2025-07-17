@@ -61,3 +61,7 @@ li {
 a {
 	color: #0000ee;
 }
+
+a:hover {
+	opacity: 0.8;
+}

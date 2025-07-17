@@ -3,14 +3,13 @@ title: 'The Guardian'
 description: 'Hacking for hacks'
 role: 'Software engineer'
 type: 'work'
-link: 'theguardian.com'
 dateStarted: 2021-04-07
 dateFinished: null
 heroImage: '/images/the-guardian/ascii-guardian-logo.png'
 heroImageAlt: 'Guardian logo made up of 0s and dots'
 ---
 
-I code for _The Guardian_. I was one of the 2021 software engineering fellowship intake and am currently part of a team redesigning the homepage. I've worked with Scala, TypeScript, React, and Amazon Web Services, amongst other things.
+I code for [_The Guardian_](https://theguardian.com). I was one of the 2021 software engineering fellowship intake and currently work with visual journalists on interactive stories and infrastructure.
 
 Things worked on during my time here include...
 

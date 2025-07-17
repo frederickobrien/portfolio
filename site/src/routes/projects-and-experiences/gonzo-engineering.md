@@ -21,8 +21,8 @@ The project was partially inspired by my old revision cards from when I was stud
 
 The project is built using [Svelte](https://svelte.dev/). The outlines around which the site revolves are stored as a series of SVG path coordinates, allowing for snazzy features like animation and reusability.
 
-## Soli
+## Skene
 
-[Soli](https://github.com/gonzo-engineering/soli) is a collection of tools and templates intended to empower musicians to create unique, independent online presences. The idea is that if essential info - artist details, releases, lyrics, gigs, etc. - is turned into data, that data can be used to generate rich, immersive websites, giving artists fully customisable spaces of their own on the web.
+[Skene](https://github.com/gonzo-engineering/skene) is a website template intended to empower musicians to create unique, independent online presences. The idea is that if essential info - artist details, releases, lyrics, gigs, etc. - is turned into data, that data can be used to generate rich, immersive websites, giving artists fully customisable spaces of their own on the web.
 
-Think the [Neil Young Archives](https://neilyoungarchives.com/), but for everyone. The Soli template has been used as the base for a couple of websites so far.
+Think the [Neil Young Archives](https://neilyoungarchives.com/), but for everyone. The Skene template has been used as the base for a couple of websites so far.
